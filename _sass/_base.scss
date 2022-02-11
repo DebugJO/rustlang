@@ -74,18 +74,18 @@ h1,h2,h3,h4,h5,h6{
 }
 
 h6 {
-	font-size: 16px;
-	font-weight: bold
-	padding: 0;
-	maring : 0;
+	font-size: 16px !important;
+	font-weight: bold !important;
+	padding: 0 !important;
+	maring : 0 !important;
 }
 
 sup {
-    vertical-align: baseline;
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    top: -0.6em;
+    vertical-align: baseline !important;
+    font-size: 75% !important;
+    line-height: 0 !important;
+    position: relative !important;
+    top: -0.6em !important;
 }
 
 .MathJax_SVG_Display, .MathJax_Display, .MJXc-display, .MathJax_PHTML_Display {
