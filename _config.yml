@@ -7,9 +7,9 @@ baseurl: ""
 timezone: Asia/Seoul
 
 description: >
-  One or more sentences introducing this blog.
+  Rust Languate.
   
-email: your_email@example.com
+email: me@msjo.kr
 
 author: DebugJO
 
@@ -17,9 +17,8 @@ avatar: "https://avatars.githubusercontent.com/u/18445776?v=4"
 
 profile: Software Engineer / Developer
 
-twitter_username: DebugJO
-
-github_username:  DebugJO
+#twitter_username: DebugJO
+#github_username:  DebugJO
 
 profile_links:
   Email: "mailto:me@msjo.kr"
