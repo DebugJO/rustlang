@@ -17,3 +17,8 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * **Facebook** [facebook.com/debugjo](https://www.facebook.com/debugjo)
 * **Slack** [msjokr.slack.com](https://msjokr.slack.com/)
 * **Trello** [trello.com/debugjo](https://trello.com/debugjo)
+
+###### Software Engineer / Developer
+* **Programming Language**: Rust, C#, C++, Delphi, Blazor/WPF/XAML
+* **Database**: Oracle, SQL Server, MariaDB, SQLite, MongoDB
+* **Operating System**: Linux, macOS, Windows
