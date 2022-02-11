@@ -1,2 +1,2 @@
-# rustlang
-rust language
+## RustLang.kr
+Rust Language
