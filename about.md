@@ -21,4 +21,16 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 ###### Software Engineer / Developer
 * Programming Language : Rust, C#, C++, Delphi, Blazor/WPF/XAML
 * Database : Oracle, SQL Server, MariaDB, SQLite, MongoDB
-* Operating System : Linux, macOS, Windows
+* RECENTLY COMPLETED PROJECTS
+  | YMD | Projects | IDE | Database |
+	| :---: | -------- | --- | -------- |	
+	| 2021.12 | 상품권판매 POS | C#, WPF | SQLite, WebAPI, 전문 |	
+	| 2021.04 | 배달앱 POS | Dephi, C#, Go | MariaDB, SQL Server |	
+	| 2021.01 | WMS Desktop | Dephi, C# | WebAPI, MariaDB |
+	| 2020.10 | 배달주문 Push C/S | Dephi, C#, Qt/C++ | MQTT, MySQL |
+	| 2020.08 | 스위치 제어관리 | C#, Delphi | SQLite |	
+	| 2020.01 | 배달주문관리 API | Delphi, C++, C# | MySQL, SQLite |
+	| 2019.10 | 병의원 검사조회 | C#, WPF(MVVM) | SQL Server |
+	| 2019.04 | 병의원 검체관리 | Delphi, C#(C++) | SQL Server |
+	| 2019.01 | 금융권 정산관리 | Delphi,  Java/Spring | Oracle |
+	| 2018.01 | 대학교 학사관리 | C#, ASP.NET MVC | SQL Server |
