@@ -48,10 +48,15 @@
             padding-bottom: 0;
 	        color: #333;
         }
-        code, pre, pre * {
-            color: #666;
-            background-color: #eee;
-        }
+	pre {
+		overflow-x: auto;
+		padding: 8px 28px;
+	}
+	pre, pre code {
+		color: #fafafa;
+		background-color: #223;
+	}
+
         th {
             border-color: #ccc;
             background-color: #ccc;
