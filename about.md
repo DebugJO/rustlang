@@ -10,3 +10,10 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * **MSJO**™(*DebugJO*) UTC+08:28, DaeHanMinGuk, Corea
 * **Email** me@msjo.kr
 * **Telegram** @debug [(t.me/debug)](https://t.me/debug)
+
+###### SNS(Social Network Service)
+* **GitHub** [github.com/DebugJO](https://github.com/DebugJO)
+* **Twitter** [twitter.com/debugjo](https://twitter.com/debugjo)
+* **Facebook** [facebook.com/debugjo](https://www.facebook.com/debugjo)
+* **Slack** [msjokr.slack.com](https://msjokr.slack.com/)
+* **Trello** [trello.com/debugjo](https://trello.com/debugjo)
