@@ -8,17 +8,17 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 
 ###### CONTACT
 * **MSJO**™(*DebugJO*) UTC+08:28, DaeHanMinGuk, Corea
-* **Email** me@msjo.kr
-* **Telegram** @debug [(t.me/debug)](https://t.me/debug)
+* Email : me@msjo.kr
+* Telegram : @debug [(t.me/debug)](https://t.me/debug)
 
 ###### SNS(Social Network Service)
-* **GitHub** [github.com/DebugJO](https://github.com/DebugJO)
-* **Twitter** [twitter.com/debugjo](https://twitter.com/debugjo)
-* **Facebook** [facebook.com/debugjo](https://www.facebook.com/debugjo)
-* **Slack** [msjokr.slack.com](https://msjokr.slack.com/)
-* **Trello** [trello.com/debugjo](https://trello.com/debugjo)
+* GitHub : [github.com/DebugJO](https://github.com/DebugJO)
+* Twitter : [twitter.com/debugjo](https://twitter.com/debugjo)
+* Facebook : [facebook.com/debugjo](https://www.facebook.com/debugjo)
+* Slack : [msjokr.slack.com](https://msjokr.slack.com/)
+* Trello : [trello.com/debugjo](https://trello.com/debugjo)
 
 ###### Software Engineer / Developer
-* **Programming Language**: Rust, C#, C++, Delphi, Blazor/WPF/XAML
-* **Database**: Oracle, SQL Server, MariaDB, SQLite, MongoDB
-* **Operating System**: Linux, macOS, Windows
+* Programming Language : Rust, C#, C++, Delphi, Blazor/WPF/XAML
+* Database : Oracle, SQL Server, MariaDB, SQLite, MongoDB
+* Operating System : Linux, macOS, Windows
