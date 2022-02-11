@@ -1,5 +1,8 @@
 ## RustLang.kr
-Rust Language
+
+Rust Language website
+
+Theme : [https://github.com/laobubu/jekyll-theme-EasyBook](https://github.com/laobubu/jekyll-theme-EasyBook)
 
 ### how to post
 
