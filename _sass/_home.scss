@@ -46,13 +46,11 @@
             font-size: $small-font-size;
             padding-top: 0;
             padding-bottom: 0;
-	        color: #333;
+	    color: #333;
         }
         code, pre, pre * {
-		overflow-x: auto;
-		padding: 8px 28px;
-		color: #fafafa;
-		background-color: #223;		
+            color: #666;
+            background-color: #eee;
         }	    
         th {
             border-color: #ccc;
