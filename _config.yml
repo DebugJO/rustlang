@@ -1,4 +1,4 @@
-title: Another Blog
+title: RustLang.kr
 
 url: "https://rustlang.kr" 
 
@@ -11,7 +11,7 @@ description: >
   
 email: me@msjo.kr
 
-author: DebugJO
+author: MSJO.kr
 
 avatar: "https://avatars.githubusercontent.com/u/18445776?v=4"
 
@@ -31,7 +31,7 @@ header:
     About: /about/
     Category: /category/
 
-permalink: /archivers/:title
+permalink: /:year/:month/:day/:title/
 
 plugins:
  - jekyll-paginate
