@@ -38,7 +38,7 @@ plugins:
  - jekyll-gist
  - jemoji
 
-paginate: 5
+paginate: 3
 paginate_path: "page:num"
 
 highlighter: rouge
