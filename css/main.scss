@@ -2,16 +2,16 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
-$base-font-family: "Source Sans Pro", "Malgun Gothic", Arial;
-$base-font-size:   16px;
+$base-font-family: "Noto Sans KR", "Malgun Gothic", Arial;
+$base-font-size:   14px;
 // $small-font-size:  $base-font-size * 0.875;
 $small-font-size:  $base-font-size * 1.0;
 $base-line-height: 1.5;
 
-$code-font-family: 'IBM Plex Mono', monospace, Arial;
+$code-font-family: 'IBM Plex Mono', Arial, "Malgun Gothic";
 $code-font-size: 14px;
 
 // Width of the content area
