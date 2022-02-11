@@ -66,8 +66,6 @@
         img {
             display: block;
             margin: 1em auto;
-            max-height: 16em;
-            opacity: .7;
             transition: opacity .3s;
             &:hover {
                 opacity: 1;
