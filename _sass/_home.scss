@@ -9,7 +9,7 @@
     }
 }
 .rss-link {
-	float:right;
+    float:right;
     text-decoration: none;
     border:1px solid;
     color: #999;
@@ -51,7 +51,10 @@
         code, pre, pre * {
             color: #666;
             background-color: #eee;
-        }	    
+        }
+	pre {
+	    padding: 0px;
+	}
         th {
             border-color: #ccc;
             background-color: #ccc;
