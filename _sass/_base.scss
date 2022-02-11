@@ -75,6 +75,17 @@ h1,h2,h3,h4,h5,h6{
 
 h6 {
 	font-size: 16px;
+	font-weight: bold
+	padding: 0;
+	maring : 0;
+}
+
+sup {
+    vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    top: -0.6em;
 }
 
 .MathJax_SVG_Display, .MathJax_Display, .MJXc-display, .MathJax_PHTML_Display {
