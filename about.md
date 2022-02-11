@@ -22,7 +22,7 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * Programming Language : Rust, C#, C++, Delphi, Blazor/WPF/XAML
 * Database : Oracle, SQL Server, MariaDB, SQLite, MongoDB
 * RECENTLY COMPLETED PROJECTS
-  | YMD | Projects | IDE | Database |
+	| YMD | Projects | IDE | Database |
 	| :---: | -------- | --- | -------- |	
 	| 2021.12 | 상품권판매 POS | C#, WPF | SQLite, WebAPI, 전문 |	
 	| 2021.04 | 배달앱 POS | Dephi, C#, Go | MariaDB, SQL Server |	
