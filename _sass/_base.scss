@@ -23,8 +23,6 @@ code,pre {
 }
 code {
 	color: #333333;
-	padding: 2px 5px;
-	border-radius: 5px;
 }
 pre {
 	overflow-x: auto;
@@ -98,7 +96,7 @@ sup {
     line-height: 0 !important;
     position: relative !important;
     top: -0.6em !important;
-    color: #900;
+    color: #900 !important;
 }
 
 .MathJax_SVG_Display, .MathJax_Display, .MJXc-display, .MathJax_PHTML_Display {
