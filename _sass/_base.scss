@@ -116,8 +116,8 @@ sup {
     border-top: 1px dashed #D0D7DE !important;
 }
 
-.footnotes:before {
-    content: 'Reference';		
+.footnotes::before {
+    content: 'Reference ';		
 }
 
 .footnotes p {
