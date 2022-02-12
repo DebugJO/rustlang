@@ -48,7 +48,7 @@ pre code {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-    margin: 10pt auto;
+    	margin: 10pt auto;
 	background: #FFF;
 
 	td, th {
@@ -62,6 +62,7 @@ table {
 		background: #555;
 		color: #eee;
 		font-weight:normal;
+		text-align: center;
 	}
 	
 	tr:hover {
