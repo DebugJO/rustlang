@@ -35,6 +35,12 @@ pre, pre code {
 pre code {
 	padding: 0;	
 }
+
+p > code {
+    font-size: 14px;
+    color: darkgoldenrod;    
+}
+
 .hide {
     display: none;
 }
@@ -101,11 +107,11 @@ sup {
 
 .MathJax_SVG_Display, .MathJax_Display, .MJXc-display, .MathJax_PHTML_Display {
     overflow: visible;
-    font-size: 12px !important;	
+    font-size: 10px !important;	
 }
 
 .MathJax {
-    font-size: 12px !important;
+    font-size: 10px !important;
 }
 
 .footnotes {
