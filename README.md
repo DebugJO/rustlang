@@ -2,8 +2,6 @@
 
 Rust Language website
 
-Theme : [https://github.com/laobubu/jekyll-theme-EasyBook](https://github.com/laobubu/jekyll-theme-EasyBook)
-
 ### how to post
 
 ```md
@@ -25,5 +23,5 @@ excerpt_separator: <!--more-->
 <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/zF34dRivLOw" frameborder="0" allowfullscreen></iframe>
 </div>
 
-[![ConfuserEx](https://msjo.kr/img/2019-11-20-1.jpg)](https://github.com/mkaring/ConfuserEx)
+[![ConfuserEx](https://xxx.yyy/images/zzz.jpg)](https://xxx.yyy/ConfuserEx)
 ```
