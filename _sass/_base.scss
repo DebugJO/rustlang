@@ -117,7 +117,12 @@ sup {
 }
 
 .footnotes::before {
-    content: 'Reference ';		
+    content: 'Reference';
+    font-weight: bold;		
+}
+
+.footnotes ol {
+    margin-top: -15px;
 }
 
 .footnotes p {
