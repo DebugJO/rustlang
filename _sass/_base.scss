@@ -90,5 +90,9 @@ sup {
 }
 
 .MathJax_SVG_Display, .MathJax_Display, .MJXc-display, .MathJax_PHTML_Display {
-    overflow-x: auto;
+    overflow: visible;
+}
+
+.MathJax {
+	font-size: 14px;
 }
