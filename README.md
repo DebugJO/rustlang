@@ -24,4 +24,8 @@ excerpt_separator: <!--more-->
 </div>
 
 [![ConfuserEx](https://xxx.yyy/images/zzz.jpg)](https://xxx.yyy/ConfuserEx)
+
+> Reference
+> 1. 가나다
+> 2. 마바사
 ```
