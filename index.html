@@ -21,7 +21,7 @@ layout: default
           {%   else %}{{ post.content | lstrip | split: "
 " | first }}{% endif %}
           <p>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"><span style="font-size:13px;">Read More</span> &raquo;</a>
+            <a class="post-link" style="font-size:13px;" href="{{ post.url | prepend: site.baseurl }}">Read More &raquo;</a>
           </p>
         </div>
       </li>
