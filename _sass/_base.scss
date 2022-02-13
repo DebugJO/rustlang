@@ -14,9 +14,23 @@ a:hover, a:focus {
 }
 blockquote {
 	margin:0;
-	padding: 5px 20px;
+	padding: 0px 10px;
 	border-left: 4px solid #CCC;
 }
+
+blockquote ol {
+	margin-bottom: -15px;	
+}
+
+blockquote ul {
+	margin-bottom: -15px;	
+}
+
+blockquote li {
+	margin-bottom: -4px 0px;	
+	margin-left: -10px;
+}
+
 code,pre {
 	font-family:  $code-font-family;
 	font-size: $code-font-size;
