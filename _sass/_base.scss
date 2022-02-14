@@ -140,3 +140,17 @@ sup {
 .footnotes p {
      line-height: 0px !important;   		
 }
+
+.rss-link {
+    float:right;
+    text-decoration: none;
+    border:1px solid;
+    color: #999;
+    background: #fff;
+    font-size: 0.7 * $base-font-size;
+    padding: 1px 8px;
+    
+    &:hover, &:focus {
+        color: #666;
+    }
+}
