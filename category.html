@@ -18,7 +18,8 @@ permalink: /category/
 <ul>
 {% for post in site.categories[word] %}{% if post.title != null %}
 <!-- <li><span>{{ post.date | date: "%b %d" }}</span> » <a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li> -->
-<li><span>{{ post.date | date: "%F" }}</span> • <a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>  
+<!-- <li><span>{{ post.date | date: "%F" }}</span> • <a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li> --> 
+<li><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a> &nbsp;•&nbsp; <span>{{ post.date | date: "%F" }}</span></li>    
 {% endif %}{% endfor %}
 </ul>
 {% endunless %}{% endfor %}
