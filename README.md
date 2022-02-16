@@ -8,7 +8,7 @@ Rust Language website
 ---
 layout: post
 title:  "Style Test"
-categories: Rust
+categories: [Rust Tutorial]
 ---
 
 텍스트
