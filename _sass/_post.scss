@@ -46,7 +46,7 @@
         pre {
         	/* margin: 0 -30px; */
                 @include media-query($on-palm) {
-		margin: 0 -10px;
+		/* margin: 0 -10px; */
             }
         }
 	    
