@@ -25,6 +25,11 @@
     .post-content {
         color: #333;
         
+	p {
+    	    text-align: justify;
+            word-break: break-word;	
+	}	
+	    
         h1,h2,h3,h4,h5,h6 {
             color: #000;
         }
@@ -40,10 +45,15 @@
         
         pre {
         	margin: 0 -30px;
-            @include media-query($on-palm) {
-		        margin: 0 -10px;
+                @include media-query($on-palm) {
+		margin: 0 -10px;
             }
         }
+	    
+	pre, code {
+    	    text-align: left;
+            word-break: normal;	
+	}	
         
         .middle-image {
             display: block;
