@@ -7,7 +7,7 @@ permalink: /category/
 <div class="home">
   <h1 class="page-heading">Category</h1>
 
-  <ul class="post-list">
+  <ul class="post-list" style="padding: 0px 40px 20px 40px;">
 
 {% capture categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign category = categories | split:',' | sort %}
