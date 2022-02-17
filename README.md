@@ -28,4 +28,10 @@ excerpt_separator: <!--more-->
 > Reference
 > 1. 가나다
 > 2. 마바사
+
+| A | B | C | D |
+|:-:|:-:|:-:|:-:|
+| 1 | a | b | c |
+| 2 | a | b | c |
+| 3 | a | b | c |
 ```
