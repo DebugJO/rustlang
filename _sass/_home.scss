@@ -61,7 +61,10 @@
             word-break: normal;		
         }
 	pre {
-	    padding: 0px;
+	    padding: 4px 8px;
+	}
+	pre > code {
+	    font-size: 13px;
 	}
         th {
             border-color: #ccc;
