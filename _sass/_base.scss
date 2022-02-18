@@ -56,13 +56,15 @@ pre code {
 }
 
 p > code {
-    font-size: 15px;
-    color: darkgoldenrod;    
+    font-size: 15px !important;
+    color: darkgoldenrod !important;
+    background-color: #FAFAFA !important;
 }
 
 li > code {
-    font-size: 15px;
-    color: darkgoldenrod;    
+    font-size: 15px !important;
+    color: darkgoldenrod !important;
+    background-color: #FAFAFA !important;
 }
 
 .hide {
