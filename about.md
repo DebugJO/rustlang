@@ -19,8 +19,8 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * Trello : [trello.com/debugjo](https://trello.com/debugjo)
 
 ###### Software Engineer / Developer
-* Programming Language : Rust, C#, C++, Delphi, Blazor/WPF/XAML
-* Database : Oracle, SQL Server, MariaDB, SQLite, MongoDB
+* **Programming Language**: Rust, C#, C++, Delphi, Blazor/WPF/XAML
+* **Database**: Oracle, SQL Server, MariaDB, SQLite, MongoDB
 * RECENTLY COMPLETED PROJECTS
 
 | YMD | Projects | IDE | Database |
