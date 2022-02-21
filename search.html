@@ -16,6 +16,7 @@
         .gsc-control-wrapper-cse { width: 95% !important; } 
         .gsc-results { width: 95% !important; } 
         #company { display: none; }
+        #queries { display: none; } 
       }
       .msjo {
         font-family: 'Noto Sans KR','Malgun Gothic';
@@ -23,14 +24,35 @@
         font-weight: bold;
         padding-left: 14px;      
       }
-      .msjo a { text-decoration: none; }    
+      .msjo a { text-decoration: none; }  
+      #queries {
+				font-size: 13px;
+				font-family: 'Noto Sans KR','Malgun Gothic';
+				width: 800px;
+				word-break: keep-all;
+		    padding: 0 0 14px 14px;
+		    word-spacing: 10px;
+	    }
+      #queries > a {
+		    color: #6a87ea;
+		    text-decoration: none;
+	    } 
+      #qrySearch {
+		    margin-left: 14px;
+		    font-family: 'Noto Sans KR','Malgun Gothic';
+		    color: #333;
+		    font-size: 14px;
+		    border-bottom: 1px solid #eaeaea;
+		    width: 800px;
+	    }      
     </style>
   </head>
   <body>
     <div class="msjo">
       <img src="/image/logo.jpg" style="height:38px;vertical-align:middle;" alt="logo">	    
       <a href="https://rustlang.kr"><font color="#607D8B">RustLang</font><font color="#999999">.kr</font></a>
-    </div>    
+    </div> 
+    
     <div>
       <script>
         (function() {
@@ -46,7 +68,13 @@
       </script>
       <gcse:search linkTarget="_parent"></gcse:search>
     </div>
-    <hr style="border:0; height:1px; background:#EAEAEA; margin:0px 0px 0px 14px; max-width:800px;">
+    
+	  <div id="qrySearch">인기검색어 (Popular Searches)</div>  
+    
+    <div id="queries"></div>
+    <script src="https://cse.google.com/query_renderer.js"></script>
+    <script src="https://cse.google.com/api/385ef86e4fe1a42d1/popularqueryjs?view=overall&callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>    
+    
     <div id="company" style="width:800px; padding-left:14px; text-align:center; padding-bottom:20px;">
       <span style="font-size:13px;">&copy; 2022 rustlang.kr</span>
     </div>    
