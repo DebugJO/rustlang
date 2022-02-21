@@ -8,7 +8,7 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 
 ###### CONTACT
 * **MSJO**™(*DebugJO*) UTC+08:28, DaeHanMinGuk, Corea
-* Email : me@msjo.kr ㆍ [https://msjo.kr](https://msjo.kr)
+* Email : msjo@rustlang.kr ㆍ me@msjo.kr ㆍ [https://msjo.kr](https://msjo.kr)
 * Telegram : @debug [(t.me/debug)](https://t.me/debug)
 
 ###### SNS(Social Network Service)
