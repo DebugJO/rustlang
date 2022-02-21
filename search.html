@@ -18,7 +18,7 @@
     </style>
   </head>
   <body>
-    <div autofocus>
+    <div>
       <script>
         (function() {
           var cx = '385ef86e4fe1a42d1';
@@ -29,6 +29,8 @@
           var s = document.getElementsByTagName('script')[0];
           s.parentNode.insertBefore(gcse, s);
         })();
+        
+        window.onload = function() { var input = document.getElementById("gsc-input").focus(); }
       </script>
       <gcse:search linkTarget="_parent"></gcse:search>
     </div>
