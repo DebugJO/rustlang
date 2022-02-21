@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RustLang.kr</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&amp;subset=korean" rel="stylesheet">     
     <style>
       .gsc-control-cse { width: 800px !important; }
       .gsc-adBlock { display: none !important; }
@@ -13,11 +14,23 @@
       @media screen and (max-width: 800px) { 
         .gsc-control-cse { width: 95% !important; }
         .gsc-control-wrapper-cse { width: 95% !important; } 
-        .gsc-results { width: 95% !important; }   
+        .gsc-results { width: 95% !important; } 
+        #company { display: none; }
       }
+      .msjo {
+        font-family: 'Noto Sans KR','Malgun Gothic';
+        font-size: 27px;
+        font-weight: bold;
+        padding-left: 14px;
+      }
+      .msjo a { text-decoration: none; }      
     </style>
   </head>
   <body>
+    <div class="msjo">
+      <img src="/image/logo.jpg" style="height:38px;vertical-align:text-bottom;" alt="logo">	    
+      <a href ="https://rustlang.kr"><font color="#7D4427">RustLang</font><font color="#777777">.kr</font></a>
+    </div>    
     <div>
       <script>
         (function() {
@@ -33,6 +46,6 @@
         window.onload = function() { var input = document.getElementById("gsc-i-id1").focus(); }
       </script>
       <gcse:search linkTarget="_parent"></gcse:search>
-    </div>
+    </div>        
   </body>
 </html>
