@@ -16,11 +16,13 @@ blockquote {
 	margin:0;
 	padding: 0px 10px;
 	border-left: 4px solid goldenrod;
+	line-height: 1.6em !important;
 }
 
 blockquote > p {
     font-size: 16px;
     font-weight: bold;
+    line-height: 1.6em !important;	
 }
 
 blockquote ol {
@@ -31,8 +33,7 @@ blockquote ul {
 	margin-top: -15px;	
 }
 
-blockquote li {
-	margin-top: -4px;	
+blockquote li {	
 	margin-left: -10px;
 }
 
