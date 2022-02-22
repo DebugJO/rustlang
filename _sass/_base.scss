@@ -15,7 +15,12 @@ a:hover, a:focus {
 blockquote {
 	margin:0;
 	padding: 0px 10px;
-	border-left: 4px solid #CCC;
+	border-left: 4px solid goldenrod;
+}
+
+blockquote > p {
+    font-size: 16px;
+    font-weight: bold;
 }
 
 blockquote ol {
