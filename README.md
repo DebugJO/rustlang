@@ -25,6 +25,8 @@ excerpt_separator: <!--more-->
 
 [![ConfuserEx](https://xxx.yyy/images/zzz.jpg)](https://xxx.yyy/ConfuserEx)
 
+본문인용 : 『String is』
+
 > Reference
 > 1. 가나다
 > 2. 마바사
