@@ -30,7 +30,7 @@
   <div class="col-box-title">Category</div>  
   <ul class="post-list">
     {% for category in site.categories %}
-      <li><a class="post-link" href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}" cate="{{ category | first }}">{{ category | first }}</a></li>
+      <li><a class="post-link" href="{{ root_url }}/category/#{{ category | first }}" cate="{{ category | first }}">{{ category | first }}</a></li>
     {% endfor %}
   </ul>
 </div>
