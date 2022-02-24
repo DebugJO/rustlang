@@ -30,7 +30,7 @@
   <div class="col-box-title">Category</div>  
   <ul class="post-list">
     {% for category in site.categories %}
-      <li><a class="post-link" href="{{ root_url }}/category/#{{ category | first }}" cate="{{ category | first }}">{{ category | first }}</a><span>({{ category | last | size }})</span></li>
+      <li><a class="post-link" href="{{ root_url }}/category/#{{ category | first }}" cate="{{ category | first }}">{{ category | first }}</a> <span>({{ category | last | size }})</span></li>
     {% endfor %}
   </ul>
 </div>
