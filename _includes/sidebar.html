@@ -27,7 +27,7 @@
 </div>
 
 <div class="col-box">
-  <div class="col-box-title">Category</div>  
+  <div class="col-box-title">Category <a class="rss-link" style="color: #777;" href="https://rustlang.kr/feed.xml">RSS Feed</a></div>  
   <ul class="post-list">
     {% for category in site.categories %}
       <li><a class="post-link" href="{{ root_url }}/category/#{{ category | first }}" cate="{{ category | first }}">{{ category | first }}</a> <span style="color:lightsteelblue;">({{ category | last | size }})</span></li>
