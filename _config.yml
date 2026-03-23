@@ -1,9 +1,9 @@
 title: RustLang.kr
 
 #url: "https://rustlang.kr" 
-url: "https://msjo.kr/rustlang/" 
+url: "https://msjo.kr" 
 
-baseurl: ""
+baseurl: "/rustlang"
 
 timezone: Asia/Seoul
 
