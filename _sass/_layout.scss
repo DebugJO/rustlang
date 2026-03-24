@@ -49,8 +49,8 @@ body {
 	}
 }
 
-$col-main-width: 758px; /* 800 */
-$col-secnod-width: 358px; /* 300 */
+$col-main-width: 750px; /* 800 */
+$col-secnod-width: 350px; /* 300 */
 $hide-sidebar-screen-width: 1120px;
 
 .header-placeholder { position: absolute; }
@@ -116,7 +116,7 @@ $hide-sidebar-screen-width: 1120px;
 .col-main {
 	position: relative;
 	box-sizing: border-box;
-	padding: 30px;
+	padding: 20px;
 	width: $col-main-width;
 	float: left;
 	animation: ebani-descend ease .5s 1;
