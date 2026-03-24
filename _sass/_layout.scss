@@ -190,11 +190,11 @@ $hide-sidebar-screen-width: 1120px;
 .col-box-author {
 	text-align: center;
 	.avatar {
-		width: 135px;
-		height: 135px;
+		width: 200px; /* 135 */
+		height: 200px; /* 135 */
 		border-radius: 100%;
 		margin: 20px auto;
-		display: block;
+		/* display: block; */
 	}
 	.name {
 		font-size: $base-font-size;
