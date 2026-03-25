@@ -15,38 +15,24 @@ layout: default
   
   {% include comment.html %}
 
-<div class="pagination" style="display: flex; justify-content: center; align-items: center; gap:40px margin: 40px auto 0; border-top: 1px solid #eee; padding-top: 20px;">
+<div class="pagination">
+  {% assign first_post = site.posts.first %}
+    <a href="{{ first_post.url | relative_url }}" style="text-decoration: none; font-weight: normal;">FIRST</a>
+  
   {% if page.next %}
     <a href="{{ page.next.url | relative_url }}" class="next" style="min-width: 60px; text-align: left;">PREV</a>
   {% else %}
     <span class="next" style="color: #ccc; min-width: 50px; text-align: left;">PREV</span>
   {% endif %}
 
-  <div style="display: flex; gap: 20px;">
-    <span class="page_number">
-      <!-- <a href="{{ '/' | relative_url }}" style="text-decoration: none; font-weight: normal;">HOME</a> -->
-      {% assign first_post = site.posts.first %}
-      <a href="{{ first_post.url | relative_url }}" style="text-decoration: none; font-weight: normal;">FIRST</a>
-    </span>
-    <span class="page_number">
-      <!--
-      {% comment %} 전체 글 개수를 paginate 숫자(3)로 나누어 마지막 페이지 번호 계산 {% endcomment %}
-      {% assign total_posts = site.posts | size %}
-      {% assign paginate_count = site.paginate | default: 3 %}
-      {% assign last_page_num = total_posts | plus: paginate_count | minus: 1 | divided_by: paginate_count %}
-      {% capture last_url %}/page{{ last_page_num }}/{% endcapture %}
-      <a href="{{ last_url | relative_url }}" style="text-decoration: none; font-weight: normal;">LAST</a>
-      -->
-      {% assign oldest_post = site.posts.last %}
-      <a href="{{ oldest_post.url | relative_url }}" style="text-decoration: none; font-weight: normal;">LAST</a>
-    </span>
-  </div>
-
   {% if page.previous %}
     <a href="{{ page.previous.url | relative_url }}" class="previous" style="min-width: 60px; text-align: right;">NEXT</a>
   {% else %}
     <span class="previous" style="color: #ccc; min-width: 50px; text-align: right;">NEXT</span>
   {% endif %} 
+
+  {% assign oldest_post = site.posts.last %}
+  <a href="{{ oldest_post.url | relative_url }}" style="text-decoration: none; font-weight: normal;">LAST</a>
 </div>
 
 </div>
