@@ -48,9 +48,3 @@
   <div class="col-box-title">TOC</div>
 </div>
 {% endif %}
-
-<div class="col-box" style="display: flex; justify-content: space-between;">
-<a href="{{ '/' | relative_url }}">FIRST</a>  
-<!-- <a href="/page{{ paginator.total_pages }}/">LAST</a> -->  
-<a href="{{ '/page' | append: paginator.total_pages | append: '/' | relative_url }}">LAST</a>  
-</div>
