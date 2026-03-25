@@ -9,33 +9,20 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 ###### CONTACT
 * **MSJO**™(*DebugJO*) UTC+08:28, DaeHanMinGuk, Corea
 * Email : msjo@rustlang.kr
-* Telegram : @debug [(t.me/debug)](https://t.me/debug)
 
 ###### SNS(Social Network Service)
 * GitHub : [github.com/DebugJO](https://github.com/DebugJO)
-* Twitter : [twitter.com/debugjo](https://twitter.com/debugjo)
-* Facebook : [facebook.com/debugjo](https://www.facebook.com/debugjo)
-* Slack : [msjokr.slack.com](https://msjokr.slack.com/)
-* Trello : [trello.com/debugjo](https://trello.com/debugjo)
+* Telegram : @debug [(t.me/debug)](https://t.me/debug)
 
-###### Software Engineer / Developer
-* **Programming Language**: Rust, C#, C++, Delphi, Blazor/WPF/XAML
-* **Database**: Oracle, SQL Server, MariaDB, SQLite, MongoDB
-* RECENTLY COMPLETED PROJECTS
+##### Software Engineer / Developer
+* **Programming Language**: C#, Rust, Zig, C++, Go
+* **Database**: Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
+* Linux, macOS, Windows
 
-| YMD | Projects | IDE | Database |
-| :---: | -------- | --- | -------- |	
-| 2022.09 | POS 솔루션 | C#, WPF | Oracle, Firebird |		
-| 2022.07 | LIS-OCS 연동관리 | C#, WPF | SQL Server, MySQL |	
-| 2022.06 | LPR Server | C#, WPF | MySQL, WebAPI, MQTT |
-| 2021.12 | 상품권판매 POS | C#, WPF | SQLite, WebAPI, 전문 |	
-| 2021.04 | 배달앱 POS | Dephi, C#, Go | MariaDB, SQL Server |	
-| 2021.01 | WMS Desktop | Dephi, C# | WebAPI, MariaDB |
-| 2020.10 | 배달주문 Push C/S | Dephi, C#, Qt/C++ | MQTT, MySQL |
-| 2020.08 | 원격 스위치 제어관리 | C#, Delphi | SQLite |	
-| 2020.01 | 배달주문관리 API | Delphi, C++, C# | MySQL, SQLite |
-| 2019.10 | 병의원 검사조회 | C#, WPF(MVVM) | SQL Server |
-| 2019.04 | 병의원 검체관리 | Delphi, C#(C++) | SQL Server |
-| 2019.01 | 금융권 정산관리 | Delphi,  Java/Spring | Oracle |
-| 2018.01 | 대학교 학사관리 | C#, ASP.NET MVC | SQL Server |
-| 2017.01 | 조직세포병리 LIS | Delphi, C# | SQL Server |	
+```cs
+foreach (Person person in people) { person.toHappy(); }
+```
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=debugjo&layout=compact&langs_count=10&hide=qmake,javascript,scss,css,html)
+
+![My Skills](https://skillicons.dev/icons?i=cs,rust,zig,cpp,clion,dotnet,dart,go,postgres,qt)
