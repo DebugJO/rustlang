@@ -23,6 +23,7 @@ excerpt_separator: <!--more-->
 <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/zF34dRivLOw" frameborder="0" allowfullscreen></iframe>
 </div>
 
+![redox](https://raw.githubusercontent.com/DebugJO/rustlang/main/image/redox.jpg)
 [![ConfuserEx](https://xxx.yyy/images/zzz.jpg)](https://xxx.yyy/ConfuserEx)
 
 본문인용 : 『String is』
