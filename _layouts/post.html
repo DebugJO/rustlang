@@ -24,7 +24,9 @@ layout: default
 
   <div style="display: flex; gap: 20px;">
     <span class="page_number">
-      <a href="{{ '/' | relative_url }}" style="text-decoration: none; font-weight: normal;">HOME</a>
+      <!-- <a href="{{ '/' | relative_url }}" style="text-decoration: none; font-weight: normal;">HOME</a> -->
+      {% assign first_post = site.posts.first %}
+      <a href="{{ first_post.url | relative_url }}" style="text-decoration: none; font-weight: normal;">FIRST</a>
     </span>
     <span class="page_number">
       <!--
