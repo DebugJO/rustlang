@@ -4,7 +4,7 @@ body {
 
 .wrapper {
 	margin: 0 auto;
-	max-width: 1100px;
+	max-width: 1120px;/* 1100 */
 }
 @media (max-width: 1120px) {
 	.wrapper {
@@ -51,7 +51,7 @@ body {
 
 $col-main-width: 770px; /* 800 750 */
 $col-secnod-width: 350px; /* 300 350 */
-$hide-sidebar-screen-width: 1140px; /* 1120 */
+$hide-sidebar-screen-width: 1120px; /* 1120 */
 
 .header-placeholder { position: absolute; }
 @media (max-width: $hide-sidebar-screen-width) {
