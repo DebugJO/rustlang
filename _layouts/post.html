@@ -27,8 +27,7 @@ layout: default
       <a href="{{ '/' | relative_url }}" style="text-decoration: none; font-weight: normal;">HOME</a>
     </span>
     <span class="page_number">
-      {% capture last_url %}/page{{ paginator.total_pages }}/{% endcapture %}
-      <a href="{{ last_url | relative_url }}" style="text-decoration: none; font-weight: normal;">LASTa</a>
+      <a href="{{ '/page' | append: paginator.total_pages | append: '/' | relative_url }}" style="text-decoration: none; font-weight: normal;">LAST ▶▶</a>
     </span>
   </div>
 
