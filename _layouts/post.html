@@ -27,12 +27,16 @@ layout: default
       <a href="{{ '/' | relative_url }}" style="text-decoration: none; font-weight: normal;">HOME</a>
     </span>
     <span class="page_number">
+      <!--
       {% comment %} 전체 글 개수를 paginate 숫자(3)로 나누어 마지막 페이지 번호 계산 {% endcomment %}
       {% assign total_posts = site.posts | size %}
       {% assign paginate_count = site.paginate | default: 3 %}
       {% assign last_page_num = total_posts | plus: paginate_count | minus: 1 | divided_by: paginate_count %}
       {% capture last_url %}/page{{ last_page_num }}/{% endcapture %}
       <a href="{{ last_url | relative_url }}" style="text-decoration: none; font-weight: normal;">LAST</a>
+      -->
+      {% assign oldest_post = site.posts.last %}
+      <a href="{{ oldest_post.url | relative_url }}" style="text-decoration: none; font-weight: normal;">LAST</a>
     </span>
   </div>
 
