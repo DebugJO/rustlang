@@ -14,11 +14,11 @@ categories: [Rust Tutorial]
 Categories
 [Liberal Arts]
 [DatabaseㆍModeling]
-[PythonㆍScriptㆍEtc]
+[PythonㆍGoㆍScript]
 [ServerㆍIT Technology]
 [C#ㆍ.NET Programming]
 [DelphiㆍC/C++ㆍQT]
-[RustㆍGoㆍZig]
+[RustㆍZig Tutorial]
 
 텍스트
 
