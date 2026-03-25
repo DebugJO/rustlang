@@ -43,6 +43,10 @@
         margin-bottom: .5em;
 	margin-top: -20px;    
     }
+	p {
+    	    text-align: justify;
+            word-break: break-word;	
+	}
     .post-excerpt {
         &, * {
             font-size: $small-font-size;
