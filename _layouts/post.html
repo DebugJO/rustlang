@@ -15,24 +15,22 @@ layout: default
   
   {% include comment.html %}
 
-  <div class="pagination" style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
-  
-  {% if page.previous %}
-    <a href="{{ page.previous.url | relative_url }}" class="previous">PREV</a>
+<div class="pagination" style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+  {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}" class="next">PREV</a>
   {% else %}
-    <span class="previous" style="color: #ccc;">PREV</span>
+    <span class="next" style="color: #ccc;">PREV</span>
   {% endif %}
 
   <span class="page_number">
     <a href="{{ '/' | relative_url }}" style="text-decoration: none; font-weight: bold;">HOME</a>
   </span>
 
-  {% if page.next %}
-    <a href="{{ page.next.url | relative_url }}" class="next">NEXT</a>
+  {% if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}" class="previous">NEXT</a>
   {% else %}
-    <span class="next" style="color: #ccc;">NEXT</span>
+    <span class="previous" style="color: #ccc;">NEXT</span>
   {% endif %}
-  
 </div>
 
 </div>
