@@ -12,7 +12,7 @@ categories: [Rust Tutorial]
 ---
 
 Categories
-[Liberal Arts]
+[Liberal Artsㆍφιλοσοφία]
 [DatabaseㆍModeling]
 [PythonㆍGoㆍScript]
 [ServerㆍIT Technology]
