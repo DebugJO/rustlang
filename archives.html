@@ -25,7 +25,7 @@ type: page
 
             <li style="padding-bottom: 0px; border-bottom: 0px solid #CCC; margin-bottom: 0px;">
                 <time>
-                { post.date | date:"%Y-%m-%d" }}.
+                {{ post.date | date:"%Y-%m-%d" }}.
                 </time>
                 <a class="title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </li>
