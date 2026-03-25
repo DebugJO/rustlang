@@ -15,24 +15,34 @@ layout: default
   
   {% include comment.html %}
 
-<div class="pagination">
-  {% assign first_post = site.posts.first %}
+<div class="pagination" style="display: flex; justify-content: space-between; align-items: center;">
+  <!-- 왼쪽 끝: FIRST -->
+  <div style="flex: 1; text-align: left;">
+    {% assign first_post = site.posts.first %}
     <a href="{{ first_post.url | relative_url }}" style="text-decoration: none; font-weight: normal;">FIRST</a>
-  
-  {% if page.next %}
-    <a href="{{ page.next.url | relative_url }}" class="next" style="min-width: 60px; text-align: left;">PREV</a>
-  {% else %}
-    <span class="next" style="color: #ccc; min-width: 50px; text-align: left;">PREV</span>
-  {% endif %}
+  </div>
 
-  {% if page.previous %}
-    <a href="{{ page.previous.url | relative_url }}" class="previous" style="min-width: 60px; text-align: right;">NEXT</a>
-  {% else %}
-    <span class="previous" style="color: #ccc; min-width: 50px; text-align: right;">NEXT</span>
-  {% endif %} 
+  <!-- 중앙: PREV & NEXT -->
+  <div style="flex: 2; display: flex; justify-content: center; gap: 40px;">
+    {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="next" style="min-width: 60px; text-align: right;">PREV</a>
+    {% else %}
+      <span class="next" style="color: #ccc; min-width: 60px; text-align: right;">PREV</span>
+    {% endif %}
 
-  {% assign oldest_post = site.posts.last %}
-  <a href="{{ oldest_post.url | relative_url }}" style="text-decoration: none; font-weight: normal;">LAST</a>
+    {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="previous" style="min-width: 60px; text-align: left;">NEXT</a>
+    {% else %}
+      <span class="previous" style="color: #ccc; min-width: 60px; text-align: left;">NEXT</span>
+    {% endif %}
+  </div>
+
+  <!-- 오른쪽 끝: LAST -->
+  <div style="flex: 1; text-align: right;">
+    {% assign oldest_post = site.posts.last %}
+    <a href="{{ oldest_post.url | relative_url }}" style="text-decoration: none; font-weight: normal;">LAST</a>
+  </div>
 </div>
+
 
 </div>
