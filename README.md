@@ -12,13 +12,13 @@ categories: [Rust Tutorial]
 ---
 
 Categories
-\[Liberal Arts\]
-\[DatabaseㆍModeling\]
-\[PythonㆍScriptㆍEtc\]
-\[ServerㆍIT Technology\]
-\[C#ㆍ.NET Programming\]
-\[DelphiㆍC/C++ㆍQT\]
-\[RustㆍGoㆍZig\]
+[Liberal Arts]
+[DatabaseㆍModeling]
+[PythonㆍScriptㆍEtc]
+[ServerㆍIT Technology]
+[C#ㆍ.NET Programming]
+[DelphiㆍC/C++ㆍQT]
+[RustㆍGoㆍZig]
 
 텍스트
 
