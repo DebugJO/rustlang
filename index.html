@@ -31,7 +31,6 @@ layout: default
   
   <!-- Pagination links -->
 <div class="pagination">
-  <a href="https://rustlang.kr">FIRST</a>
   {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous">PREV</a>
   {% else %}
@@ -43,7 +42,6 @@ layout: default
   {% else %}
     <span class="next ">NEXT</span>
   {% endif %}
-  <a href="https://rustlang.kr/2018/10/02/1/">LAST</a>
 </div>
 
 </div>
