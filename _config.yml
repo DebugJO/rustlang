@@ -42,7 +42,7 @@ plugins:
 paginate: 3
 paginate_path: "page:num"
 
-# highlighter: rouge
+highlighter: rouge
 markdown: kramdown
 
 defaults:
