@@ -15,25 +15,25 @@ layout: default
   
   {% include comment.html %}
 
-<div class="pagination" style="display: flex; justify-content: space-between; align-items: center; margin: 40px auto 0; border-top: 1px solid #eee; padding-top: 20px; max-width: 520px; width: 95%;">
+<div class="pagination" style="display: flex; justify-content: space-between; align-items: center; margin: 40px auto 0; border-top: 1px solid #eee; padding-top: 20px; max-width: 500px; width: 95%;">
   {% if page.next %}
     <a href="{{ page.next.url | relative_url }}" class="next" style="min-width: 60px; text-align: left;">PREV</a>
   {% else %}
-    <span class="next" style="color: #ccc; min-width: 50px; text-align: left;">◀ PREV</span>
+    <span class="next" style="color: #ccc; min-width: 50px; text-align: left;">PREV</span>
   {% endif %}
 
   <div style="display: flex; gap: 20px;">
     <span class="page_number">
-      <a href="{{ '/' | relative_url }}" style="text-decoration: none; font-weight: normal;">◀◀ HOME</a>
+      <a href="{{ '/' | relative_url }}" style="text-decoration: none; font-weight: normal;">HOME</a>
     </span>
     <span class="page_number">
       {% capture last_url %}/page/{{ last_page_num }}/{% endcapture %}
-      <a href="{{ last_url | relative_url }}" style="text-decoration: none; font-weight: normal;">LAST ▶▶</a>
+      <a href="{{ last_url | relative_url }}" style="text-decoration: none; font-weight: normal;">LAST</a>
     </span>
   </div>
 
   {% if page.previous %}
-    <a href="{{ page.previous.url | relative_url }}" class="previous" style="min-width: 60px; text-align: right;">NEXT ▶</a>
+    <a href="{{ page.previous.url | relative_url }}" class="previous" style="min-width: 60px; text-align: right;">NEXT</a>
   {% else %}
     <span class="previous" style="color: #ccc; min-width: 50px; text-align: right;">NEXT</span>
   {% endif %} 
