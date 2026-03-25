@@ -50,6 +50,6 @@
 {% endif %}
 
 <div class="col-box">
-<a href="{{ site.paginate_path | replace: 'page:num', '' }}">FIRST</a>
+<a href="{{ '/' | relative_url }}">FIRST</a>  
 <a href="/page{{ paginator.total_pages }}/">LAST</a>  
 </div>
