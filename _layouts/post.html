@@ -15,7 +15,7 @@ layout: default
   
   {% include comment.html %}
 
-<div class="pagination" style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px;">
+<div class="pagination" style="display: flex; justify-content: space-between; align-items: center; margin: 40px auto 0; border-top: 1px solid #eee; padding-top: 20px; max-width: 400px; width: 90%;">
   {% if page.next %}
     <a href="{{ page.next.url | relative_url }}" class="next">PREV</a>
   {% else %}
@@ -23,7 +23,7 @@ layout: default
   {% endif %}
 
   <span class="page_number">
-    <a href="{{ '/' | relative_url }}" style="text-decoration: none; font-weight: bold;">HOME</a>
+    <a href="{{ '/' | relative_url }}" style="text-decoration: none; font-weight: normal;">HOME</a>
   </span>
 
   {% if page.previous %}
