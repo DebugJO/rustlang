@@ -26,7 +26,10 @@ excerpt_separator: <!--more-->
 ![redox](https://raw.githubusercontent.com/DebugJO/rustlang/main/image/redox.jpg)
 [![ConfuserEx](https://xxx.yyy/images/zzz.jpg)](https://xxx.yyy/ConfuserEx)
 
-본문인용 : 『String is』
+본문인용 :
+<blockquote style="border-left:2px solid #e0e0e0; padding-left: 10px; margin-left: 0; ">
+인용문구<sup>3</sup>
+</blockquote>
 
 > Reference
 > 1. 가나다
