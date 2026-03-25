@@ -15,36 +15,41 @@ layout: default
   
   {% include comment.html %}
 
-<!-- 구분선 복구 -->
+<!-- 구분선 -->
 <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-  
-<div class="pagination" style="display: flex; justify-content: center; align-items: center; padding: 0 20px;">
-  
-  <!-- FIRST (왼쪽 여백 확보) -->
+
+<div class="pagination" style="display: flex; justify-content: center; align-items: center; padding: 0 40px;">  
+  {% assign first_post = site.posts.first %}
+  {% assign oldest_post = site.posts.last %}
+
   <div style="flex: 1; text-align: left;">
-    {% assign first_post = site.posts.first %}
-    <a href="{{ first_post.url | relative_url }}" style="text-decoration: none; font-weight: normal; color: #666;">FIRST</a>
+    {% if page.url == first_post.url %}
+      <span style="color: #ccc; cursor: default;">FIRST</span>
+    {% else %}
+      <a href="{{ first_post.url | relative_url }}" style="text-decoration: none; font-weight: normal; color: #666;">FIRST</a>
+    {% endif %}
   </div>
 
-  <!-- 중앙 그룹 (PREV & NEXT) -->
-  <div style="flex: 2; display: flex; justify-content: center; gap: 50px;">
+  <div style="flex: 2; display: flex; justify-content: center; gap: 70px;">
     {% if page.next %}
-      <a href="{{ page.next.url | relative_url }}" class="next" style="min-width: 50px; text-align: center; text-decoration: none;">PREV</a>
+      <a href="{{ page.next.url | relative_url }}" style="min-width: 50px; text-align: center; text-decoration: none;">PREV</a>
     {% else %}
-      <span class="next" style="color: #ccc; min-width: 50px; text-align: center;">PREV</span>
+      <span style="color: #ccc; min-width: 50px; text-align: center;">PREV</span>
     {% endif %}
 
     {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}" class="previous" style="min-width: 50px; text-align: center; text-decoration: none;">NEXT</a>
+      <a href="{{ page.previous.url | relative_url }}" style="min-width: 50px; text-align: center; text-decoration: none;">NEXT</a>
     {% else %}
-      <span class="previous" style="color: #ccc; min-width: 50px; text-align: center;">NEXT</span>
+      <span style="color: #ccc; min-width: 50px; text-align: center;">NEXT</span>
     {% endif %}
   </div>
 
-  <!-- LAST (오른쪽 여백 확보) -->
   <div style="flex: 1; text-align: right;">
-    {% assign oldest_post = site.posts.last %}
-    <a href="{{ oldest_post.url | relative_url }}" style="text-decoration: none; font-weight: normal; color: #666;">LAST</a>
+    {% if page.url == oldest_post.url %}
+      <span style="color: #ccc; cursor: default;">LAST</span>
+    {% else %}
+      <a href="{{ oldest_post.url | relative_url }}" style="text-decoration: none; font-weight: normal; color: #666;">LAST</a>
+    {% endif %}
   </div>
 </div>
 
