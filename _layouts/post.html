@@ -16,3 +16,19 @@ layout: default
   {% include comment.html %}
 
 </div>
+
+<div class="pagination">
+  {% if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}" class="previous">PREV POST</a>
+  {% else %}
+    <span class="previous">FIRST POST</span>
+  {% endif %}
+
+  <span class="page_number"><a href="{{ '/' | relative_url }}">HOME</a></span>
+
+  {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}" class="next">NEXT POST</a>
+  {% else %}
+    <span class="next">LAST POST</span>
+  {% endif %}
+</div>
