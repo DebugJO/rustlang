@@ -32,6 +32,8 @@ layout: default
   <!-- Pagination links -->
 <div class="pagination">
   <a href="{{ '/' | relative_url }}" style="text-decoration: none; font-weight: normal;">HOME</a>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;
   
   {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous">PREV</a>
@@ -46,6 +48,8 @@ layout: default
     <span class="next ">NEXT</span>
   {% endif %}
 
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  
   {% if paginator.page < paginator.total_pages %}
     {% assign last_url = site.paginate_path | replace: ':num', paginator.total_pages | relative_url %}
     <a href="{{ last_url }}" style="text-decoration: none; font-weight: normal;">LAST</a>
