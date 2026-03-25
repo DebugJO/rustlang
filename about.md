@@ -14,7 +14,7 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * GitHub : [github.com/DebugJO](https://github.com/DebugJO)
 * Telegram : @debug [(t.me/debug)](https://t.me/debug)
 
-##### Software Engineer / Developer
+###### Software Engineer / Developer
 * **Programming Language**: C#, Rust, Zig, C++, Go
 * **Database**: Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
 * Linux, macOS, Windows
