@@ -31,7 +31,7 @@ header:
   links:
     About: /about/
     Category: /category/
-    Archives: /archives/
+    Archives: /archive/
 
 permalink: /:year/:month/:day/:title/
 
