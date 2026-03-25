@@ -49,9 +49,9 @@ body {
 	}
 }
 
-$col-main-width: 750px; /* 800 */
-$col-secnod-width: 350px; /* 300 */
-$hide-sidebar-screen-width: 1120px;
+$col-main-width: 770px; /* 800 750 */
+$col-secnod-width: 350px; /* 300 350 */
+$hide-sidebar-screen-width: 1140px; /* 1120 */
 
 .header-placeholder { position: absolute; }
 @media (max-width: $hide-sidebar-screen-width) {
