@@ -51,5 +51,6 @@
 
 <div class="col-box">
 <a href="{{ '/' | relative_url }}">FIRST</a>  
-<a href="/page{{ paginator.total_pages }}/">LAST</a>  
+<!-- <a href="/page{{ paginator.total_pages }}/">LAST</a> -->  
+<a href="{{ '/page' | append: paginator.total_pages | append: '/' | relative_url }}">LAST</a>  
 </div>
