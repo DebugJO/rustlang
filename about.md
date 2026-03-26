@@ -19,7 +19,7 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * **Database**: Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
 
 <div style="text-align: center;">
-  $X[k] = E[k] + W_N^k O[k]$ , $y = f(\sum_{i=1}^{n} w_i x_i + b)$
+ $X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-i \frac{2\pi}{N} kn}$ , $X[k] = E[k] + W_N^k O[k]$ , $y = f(\sum_{i=1}^{n} w_i x_i + b)$
 </div>
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=debugjo&layout=compact&langs_count=8&hide=qmake,javascript,scss,css,html)
