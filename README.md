@@ -51,4 +51,11 @@ excerpt_separator: <!--more-->
 | 1 | a | b | c |
 | 2 | a | b | c |
 | 3 | a | b | c |
+
+Block Mathjax :
+$$
+f(x) = ax + b
+$$
+
+Inline Mathjax : $a \neq b$
 ```
