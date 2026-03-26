@@ -18,9 +18,10 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * **Programming Language**: C#, Rust, Zig, C++, Go
 * **Database**: Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=debugjo&layout=compact&langs_count=8&hide=qmake,javascript,scss,css,html)](https://rustlang.kr/)
+<div style="text-align: center;">
+ $X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-i \frac{2\pi}{N} kn}$ , $X[k] = E[k] + W_N^k O[k]$ , $y = f(\sum_{i=1}^{n} w_i x_i + b)$
+</div>
 
 ```cs
 foreach (Person person in people) { person.toHappy(); }
 ```
-dd
