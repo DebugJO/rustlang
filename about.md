@@ -18,7 +18,7 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * **Programming Language**: C#, Rust, Zig, C++, Go
 * **Database**: Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=debugjo&layout=compact&langs_count=8&hide=qmake,javascript,scss,css,html)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=debugjo&layout=compact&langs_count=8&hide=qmake,javascript,scss,css,html)](https://rustlang.kr/)
 
 ```cs
 foreach (Person person in people) { person.toHappy(); }
