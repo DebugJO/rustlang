@@ -24,4 +24,6 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=debugjo&layout=compact&langs_count=8&hide=qmake,javascript,scss,css,html)
 
-![My Skills](https://skillicons.dev/icons?i=cs,rust,zig,cpp,clion,dotnet,dart,go,postgres,qt)
+```cs
+foreach (Person person in people) { person.toHappy(); }
+```
