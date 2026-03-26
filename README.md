@@ -59,3 +59,4 @@ $$
 
 Inline Mathjax : $a \neq b$
 ```
+![My Skills](https://skillicons.dev/icons?i=cs,rust,zig,cpp,clion,dotnet,dart,go,postgres,qt)
