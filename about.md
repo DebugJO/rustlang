@@ -18,7 +18,7 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * **Programming Language**: C#, Rust, Zig, C++, Go
 * **Database**: Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
 
-<center>$X[k] = E[k] + W_N^k O[k]$</center>
+<p align="center">$X[k] = E[k] + W_N^k O[k]$</p>
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=debugjo&layout=compact&langs_count=10&hide=qmake,javascript,scss,css,html)
 
