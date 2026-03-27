@@ -48,7 +48,7 @@ nav_exclude: true  <-- 메뉴에서 제외하는 옵션 (테마에 따라 다름
         var query = e.target.value.toLowerCase().trim();
         resultsContainer.innerHTML = ''; // 기존 결과 비우기
 
-        if (query.length > 0) {
+        if (query.length >= 2) {
             // 안내 메시지 숨기기
             if (initialMsg) initialMsg.style.display = 'none';
 
