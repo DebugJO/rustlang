@@ -1,54 +1,60 @@
 <style>
-  /* 1. 외부 컨테이너 스타일 (기존 코드 블록과 동일하게) */
+  /* 1. 외부 컨테이너: 흰색 배경과 라운드 보더 적용 */
   .mermaid {
-    background-color: #282c34 !important; /* 배경색 통일 */
-    border-radius: 4px;                  /* 약간의 라운딩 */
-    padding: 0px 0 !important;         /* 위아래 여백 타이트하게 15px, 1rem 0 */
-    margin: 0 0;
+    background-color: #FFFFFF !important; /* 배경 흰색 */
+    border: 1px solid #e1e4e8 !important;  /* 연한 회색 테두리 */
+    border-radius: 8px !important;         /* 둥근 모서리 */
+    padding: 20px !important;             /* 내부 여백 */
+    margin: 1.5rem 0 !important;          /* 위아래 간격 */
     display: flex;
     justify-content: center;
     overflow-x: auto;
-    /* 폰트 크기 강제 고정 */
-    font-size: 13px !important;
+    font-size: 13px !important;           /* 폰트 크기 고정 */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* 살짝 그림자 (선택사항) */
   }
 
-  /* 2. Mermaid 내부 텍스트 폰트 크기 강제 적용 */
+  /* 2. SVG 텍스트 크기 강제 */
   .mermaid svg {
     font-size: 13px !important;
-    font-family: 'Cascadia Code', 'Source Code Pro', 'Menlo', monospace !important;
+    max-width: 100% !important;
+    height: auto !important;
   }
 
   /* 로딩 전 텍스트 숨김 */
-  .language-mermaid {
-    display: none;
-  }
+  .language-mermaid { display: none; }
 </style>
 
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
-  // Mermaid 상세 설정
   mermaid.initialize({
     startOnLoad: false,
-    theme: 'dark',
+    theme: 'base', /* base 테마 사용 */
     securityLevel: 'loose',
-    // 테마 변수 설정을 통해 내부 색상과 폰트 크기 조절
     themeVariables: {
-      fontSize: '13px',            /* 텍스트 크기 13px */
-      fontFamily: 'monospace',     /* 폰트 스타일 */
+      /* Base 테마 변수: 라이트 모드 최적화 */
+      fontFamily: 'arial, sans-serif',
+      fontSize: '13px',
+
+      // 전체 배경 및 캔버스 (흰색)
+      mainBkg: '#FFFFFF',
+      canvasBackground: '#FFFFFF',
       
-      // 배경색 및 노드 색상 설정
-      primaryColor: '#3e4451',     /* 노드 배경색 (배경보다 약간 밝게) */
-      primaryTextColor: '#abb2bf', /* 노드 글자색 */
-      primaryBorderColor: '#5c6370', 
+      // 노드(박스) 스타일
+      primaryColor: '#f6f8fa',       /* 노드 배경: 아주 연한 회색 */
+      primaryTextColor: '#24292e',   /* 노드 글자: 진한 회색/검정 */
+      primaryBorderColor: '#d1d5da', /* 노드 테두리 */
       
-      lineColor: '#abb2bf',        /* 선 색상 */
-      secondaryColor: '#282c34',
-      tertiaryColor: '#282c34',
+      // 선 및 화살표 스타일
+      lineColor: '#444d56',          /* 연결선 색상 */
+      secondaryColor: '#0366d6',     /* 강조 포인트 색상 (파랑) */
+      tertiaryColor: '#f1f8ff',
       
-      // 메인 배경색을 요청하신 색상으로 고정
-      mainBkg: '#282c34',
-      canvasBackground: '#282c34'  /* 전체 캔버스 배경 */
+      // 기타 라벨
+      edgeLabelBackground: '#ffffff', /* 선 위 글자 배경 */
+      nodeTextColor: '#24292e',
+      clusterBkg: '#fcfcfc',          /* 서브그래프 배경 */
+      clusterBorder: '#e1e4e8'
     }
   });
 
@@ -57,14 +63,17 @@
     
     for (let i = 0; i < elements.length; i++) {
       const el = elements[i];
+      // 기존 다크 테마의 .highlighter-rouge 컨테이너를 찾음
       const container = el.closest('.highlighter-rouge') || el;
       const rawCode = el.innerText.trim();
 
+      // 새로운 깔끔한 div 생성
       const chartDiv = document.createElement('div');
       chartDiv.className = 'mermaid';
       chartDiv.setAttribute('id', 'mermaid-' + i);
       chartDiv.textContent = rawCode;
 
+      // 기존 블록을 통째로 교체 (다크 테마 CSS 제거 효과)
       container.parentNode.replaceChild(chartDiv, container);
     }
     
