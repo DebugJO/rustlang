@@ -1,0 +1,44 @@
+---
+layout: default
+title: Search
+permalink: /search/
+icon: search
+type: page
+---
+
+<div class="home">
+  <h1 class="page-heading">Search Posts</h1>
+
+  <div class="search-wrapper" style="margin: 20px 40px;">
+    <!-- 검색 입력창 -->
+    <input type="text" id="search-input" placeholder="검색어를 입력하세요 (예: rust, ownership...)" 
+           style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+    
+    <!-- 검색 결과가 출력될 영역 -->
+    <ul id="results-container" style="list-style: none; padding: 0; margin-top: 30px;">
+      <!-- 검색 전 초기 안내 문구 (선택사항) -->
+      <li style="color: #888; margin-left: 20px;">검색어를 입력하면 결과가 여기에 표시됩니다.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Simple Jekyll Search 라이브러리 (CDN) -->
+<script src="https://unpkg.com"></script>
+
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    // 검색 결과 레이아웃 (아카이브 리스트 스타일과 맞춤)
+    searchResultTemplate: `
+      <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+        <span style="color: #888; font-size: 0.9em; margin-right: 15px;">{date}</span>
+        <a href="{url}" style="font-weight: bold; color: #d32f2f; text-decoration: none; font-size: 1.1em;">{title}</a>
+      </li>
+    `,
+    noResultsText: '<li style="margin-left: 20px;">검색 결과가 없습니다.</li>',
+    limit: 50,
+    fuzzy: false // 정확한 검색을 원하시면 false, 유사 검색은 true
+  });
+</script>
