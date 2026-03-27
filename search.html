@@ -25,6 +25,26 @@ type: page
 <script src="https://unpkg.com"></script>
 
 <script>
+  window.onload = function() {
+    try {
+      var sjs = SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/search.json',
+        searchResultTemplate: '<li><span style="color:#888;">{date}</span> <a href="{url}">{title}</a></li>',
+        noResultsText: '<li>검색 결과가 없습니다.</li>',
+        limit: 20,
+        fuzzy: false,
+        // 성공적으로 로드되었는지 확인하는 로그
+        success: function() { console.log("Search: JSON loaded successfully!"); }
+      });
+    } catch (e) {
+      console.error("Search Initialization Error:", e);
+    }
+  };
+</script>
+
+<script>
   // 페이지 로딩 완료 후 실행되도록 보장합니다
   window.onload = function() {
     var searchInput = document.getElementById('search-input');
