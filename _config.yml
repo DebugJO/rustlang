@@ -57,4 +57,9 @@ defaults:
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-  math_engine: mathjax
+  math_engine: mathjax\
+
+mermaid:
+  enabled: true
+  url: "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs"
+  theme: "base" # default, dark, forest, neutral 중 선택  
