@@ -22,7 +22,7 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
  $X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-i \frac{2\pi}{N} kn}$ &nbsp;&nbsp;,&nbsp;&nbsp; $X[k] = E[k] + W_N^k O[k]$ &nbsp;&nbsp;,&nbsp;&nbsp; $y = f(\sum_{i=1}^{n} w_i x_i + b)$
 </div>
 
-###### 참고문헌 작성법
+**참고문헌 작성법**
 
 * 저서 : 글쓴이, 책이름, 출판사, 출판연도, 인용한 쪽 수
 * 번역서 : 글쓴이, 책이름, 옮긴이, 출판사, 출판연도, 인용한 쪽 수
