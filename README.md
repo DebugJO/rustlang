@@ -58,5 +58,18 @@ f(x) = ax + b
 $$
 
 Inline Mathjax : $a \neq b$
+
+---
+layout: post
+title:  "C#에서 AOT로 NLog사용하기"
+categories: [C#ㆍ.NET Programming]
+mermaid: true
+---
+
+```mermaid
+graph LR
+A["Cpp, Rust, Zig"] --> B["AOT(C#)"]
+B --> C["Manged(C#)"]
+```
 ```
 ![My Skills](https://skillicons.dev/icons?i=cs,rust,zig,cpp,clion,dotnet,dart,go,postgres,qt)
