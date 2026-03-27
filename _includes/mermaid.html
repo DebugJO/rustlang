@@ -1,17 +1,24 @@
 <style>
-  /* 1. Mermaid 컨테이너를 기존 코드 블록(pre)처럼 보이게 설정 */
+  /* 1. 외부 컨테이너 스타일 (기존 코드 블록과 동일하게) */
   .mermaid {
-    /* 기존 다크 코드 블록의 배경색과 비슷하게 설정 (테마에 맞춰 자동 조절됨) */
-    background-color: #282c34 !important; /* 필요시 사용 중인 다크 배경색으로 수정 가능 */
-    border-radius: 6px;                  /* 코드 블록의 둥근 모서리 유지 */
-    padding: 20px 0;                     /* 다이어그램 위아래 여백 */
-    margin: 1rem 0;
+    background-color: #282c34 !important; /* 배경색 통일 */
+    border-radius: 4px;                  /* 약간의 라운딩 */
+    padding: 0px 0 !important;         /* 위아래 여백 타이트하게 15px, 1rem 0 */
+    margin: 0 0;
     display: flex;
     justify-content: center;
-    overflow-x: auto;                    /* 모바일에서 잘림 방지 */
+    overflow-x: auto;
+    /* 폰트 크기 강제 고정 */
+    font-size: 13px !important;
   }
 
-  /* 2. 로딩 전 마크다운 텍스트가 잠깐 보이는 현상 방지 */
+  /* 2. Mermaid 내부 텍스트 폰트 크기 강제 적용 */
+  .mermaid svg {
+    font-size: 13px !important;
+    font-family: 'Cascadia Code', 'Source Code Pro', 'Menlo', monospace !important;
+  }
+
+  /* 로딩 전 텍스트 숨김 */
   .language-mermaid {
     display: none;
   }
@@ -20,18 +27,28 @@
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
-  // 다크 모드 설정을 포함하여 초기화
+  // Mermaid 상세 설정
   mermaid.initialize({
-    startOnLoad: false, // 수동 제어를 위해 false
-    theme: 'dark',      /* 핵심: 다크 테마 적용 */
-    logLevel: 3,
+    startOnLoad: false,
+    theme: 'dark',
     securityLevel: 'loose',
+    // 테마 변수 설정을 통해 내부 색상과 폰트 크기 조절
     themeVariables: {
-      /* 다크 배경에 어울리도록 색상 미세 조정 (선택 사항) */
-      darkMode: true,
-      background: '#282c34', 
-      primaryColor: '#bb86fc',
-      lineColor: '#f8f8f2'
+      fontSize: '13px',            /* 텍스트 크기 13px */
+      fontFamily: 'monospace',     /* 폰트 스타일 */
+      
+      // 배경색 및 노드 색상 설정
+      primaryColor: '#3e4451',     /* 노드 배경색 (배경보다 약간 밝게) */
+      primaryTextColor: '#abb2bf', /* 노드 글자색 */
+      primaryBorderColor: '#5c6370', 
+      
+      lineColor: '#abb2bf',        /* 선 색상 */
+      secondaryColor: '#282c34',
+      tertiaryColor: '#282c34',
+      
+      // 메인 배경색을 요청하신 색상으로 고정
+      mainBkg: '#282c34',
+      canvasBackground: '#282c34'  /* 전체 캔버스 배경 */
     }
   });
 
@@ -40,21 +57,18 @@
     
     for (let i = 0; i < elements.length; i++) {
       const el = elements[i];
-      // Jekyll이 감싸고 있는 가장 바깥쪽 컨테이너 찾기
       const container = el.closest('.highlighter-rouge') || el;
       const rawCode = el.innerText.trim();
 
-      // 새로운 div 생성
       const chartDiv = document.createElement('div');
       chartDiv.className = 'mermaid';
       chartDiv.setAttribute('id', 'mermaid-' + i);
       chartDiv.textContent = rawCode;
 
-      // 기존 블록을 Mermaid 블록으로 교체
       container.parentNode.replaceChild(chartDiv, container);
     }
     
-    // 렌더링 시작
+    // 렌더링 실행
     await mermaid.run();
   });
 </script>
