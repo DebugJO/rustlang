@@ -48,9 +48,13 @@ nav_exclude: true  <-- 메뉴에서 제외하는 옵션 (테마에 따라 다름
         var query = e.target.value.toLowerCase().trim();
         resultsContainer.innerHTML = ''; // 기존 결과 비우기
 
+        if (query.length > 0) {
+            if (initialMsg) initialMsg.style.display = 'none';
+        }
+      
         if (query.length >= 2) {
             // 안내 메시지 숨기기
-            if (initialMsg) initialMsg.style.display = 'none';
+            // if (initialMsg) initialMsg.style.display = 'none';
 
             // 데이터 필터링 (제목 또는 본문에 키워드 포함 여부 확인)
             var filtered = searchData.filter(function(item) {
