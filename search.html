@@ -21,27 +21,31 @@ type: page
   </div>
 </div>
 
-<!-- [수정됨] 전체 경로가 포함된 정확한 라이브러리 주소입니다 -->
-<script src="https://unpkg.com"></script>
+<script src="https://cdn.jsdelivr.net"></script>
 
 <script>
-  window.onload = function() {
-    try {
-      var sjs = SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '/search.json',
-        searchResultTemplate: '<li><span style="color:#888;">{date}</span> <a href="{url}">{title}</a></li>',
-        noResultsText: '<li>검색 결과가 없습니다.</li>',
-        limit: 20,
-        fuzzy: false,
-        // 성공적으로 로드되었는지 확인하는 로그
-        success: function() { console.log("Search: JSON loaded successfully!"); }
-      });
-    } catch (e) {
-      console.error("Search Initialization Error:", e);
+  // 라이브러리가 로드되었는지 체크한 후 실행하는 안전 장치
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      console.log("라이브러리 로딩 중... 0.5초 후 재시도");
+      setTimeout(initSearch, 500);
+      return;
     }
-  };
+
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '/search.json',
+      searchResultTemplate: '<li style="margin-bottom:10px;"><span style="color:#888;">{date}</span> <a href="{url}" style="font-weight:bold; color:#d32f2f;">{title}</a></li>',
+      noResultsText: '<li>검색 결과가 없습니다.</li>',
+      limit: 20,
+      fuzzy: false
+    });
+    console.log("검색 엔진 준비 완료!");
+  }
+
+  // 페이지 로드 시 실행
+  window.addEventListener('load', initSearch);
 </script>
 
 <script>
