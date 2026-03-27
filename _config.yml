@@ -32,7 +32,7 @@ header:
     About: /about/
     Category: /category/
     Archives: /archive/
-    Search: /search/
+    # Search: /search/
 
 permalink: /:year/:month/:day/:title/
 
