@@ -3,6 +3,10 @@
 
   {% include head.html %}
 
+  {% if page.mermaid %}
+  {% include mermaid.html %}
+  {% endif %}
+  
   <body>
 
     {% include header.html %}
