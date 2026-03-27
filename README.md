@@ -17,7 +17,7 @@ Categories
 [PythonㆍGoㆍScript]
 [ServerㆍIT Technology]
 [C#ㆍ.NET Programming]
-[DelphiㆍC/C++ㆍQT]
+[C/C++ㆍQTㆍDelphi]
 [RustㆍZig Tutorial]
 
 텍스트
