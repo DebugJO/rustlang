@@ -73,6 +73,7 @@ graph LR
 A["Cpp, Rust, Zig"] --> B["AOT(C#)"]
 B --> C["Manged(C#)"]
 ```
+
 ![My Skills](https://skillicons.dev/icons?i=cs,rust,zig,cpp,clion,dotnet,dart,go,postgres,qt)
 
 ```
