@@ -1,26 +1,23 @@
 <style>
-  /* 1. 외부 컨테이너: 흰색 배경과 라운드 보더 적용 */
+  /* 1. 외부 컨테이너: 여백을 더 타이트하게 조정 */
   .mermaid {
-    background-color: #FFFFFF !important; /* 배경 흰색 */
-    border: 1px solid #e1e4e8 !important;  /* 연한 회색 테두리 */
-    border-radius: 8px !important;         /* 둥근 모서리 */
-    padding: 20px !important;             /* 내부 여백 */
-    margin: 1.5rem 0 !important;          /* 위아래 간격 */
+    background-color: #FAFAFA !important;
+    border: 1px solid #eee !important;
+    /* border-radius: 6px !important;*/         /* 라운드 살짝 줄임 */
+    /* padding: 10px !important; */            /* 외부 여백 20px -> 10px로 축소 */
+    margin: -8px -8px !important;
     display: flex;
     justify-content: center;
     overflow-x: auto;
-    font-size: 13px !important;           /* 폰트 크기 고정 */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* 살짝 그림자 (선택사항) */
+    font-size: 13px !important;
   }
 
-  /* 2. SVG 텍스트 크기 강제 */
+  /* 2. SVG 내부 텍스트 및 간격 강제 제어 */
   .mermaid svg {
     font-size: 13px !important;
     max-width: 100% !important;
-    height: auto !important;
   }
 
-  /* 로딩 전 텍스트 숨김 */
   .language-mermaid { display: none; }
 </style>
 
@@ -29,32 +26,32 @@
 
   mermaid.initialize({
     startOnLoad: false,
-    theme: 'base', /* base 테마 사용 */
+    theme: 'base',
     securityLevel: 'loose',
+    // 차트 종류별로 내부 간격 강제 설정
+    flowchart: { 
+      htmlLabels: true,
+      curve: 'linear',
+      padding: 10,           /* 차트 전체의 여백 축소 */
+      nodeSpacing: 30,       /* 노드 간의 간격 축소 */
+      rankSpacing: 30        /* 층 사이의 간격 축소 */
+    },
     themeVariables: {
-      /* Base 테마 변수: 라이트 모드 최적화 */
       fontFamily: 'arial, sans-serif',
       fontSize: '13px',
 
-      // 전체 배경 및 캔버스 (흰색)
+      /* [핵심] 박스 내부 여백 줄이기 */
+      nodePadding: 5,        /* 박스 안쪽의 상하좌우 여백 (기본값 약 10~15) */
+      
       mainBkg: '#FFFFFF',
       canvasBackground: '#FFFFFF',
-      
-      // 노드(박스) 스타일
-      primaryColor: '#f6f8fa',       /* 노드 배경: 아주 연한 회색 */
-      primaryTextColor: '#24292e',   /* 노드 글자: 진한 회색/검정 */
-      primaryBorderColor: '#d1d5da', /* 노드 테두리 */
-      
-      // 선 및 화살표 스타일
-      lineColor: '#444d56',          /* 연결선 색상 */
-      secondaryColor: '#0366d6',     /* 강조 포인트 색상 (파랑) */
+      primaryColor: '#f6f8fa',
+      primaryTextColor: '#24292e',
+      primaryBorderColor: '#d1d5da',
+      lineColor: '#444d56',
+      secondaryColor: '#0366d6',
       tertiaryColor: '#f1f8ff',
-      
-      // 기타 라벨
-      edgeLabelBackground: '#ffffff', /* 선 위 글자 배경 */
-      nodeTextColor: '#24292e',
-      clusterBkg: '#fcfcfc',          /* 서브그래프 배경 */
-      clusterBorder: '#e1e4e8'
+      edgeLabelBackground: '#ffffff'
     }
   });
 
@@ -63,21 +60,17 @@
     
     for (let i = 0; i < elements.length; i++) {
       const el = elements[i];
-      // 기존 다크 테마의 .highlighter-rouge 컨테이너를 찾음
       const container = el.closest('.highlighter-rouge') || el;
       const rawCode = el.innerText.trim();
 
-      // 새로운 깔끔한 div 생성
       const chartDiv = document.createElement('div');
       chartDiv.className = 'mermaid';
       chartDiv.setAttribute('id', 'mermaid-' + i);
       chartDiv.textContent = rawCode;
 
-      // 기존 블록을 통째로 교체 (다크 테마 CSS 제거 효과)
       container.parentNode.replaceChild(chartDiv, container);
     }
     
-    // 렌더링 실행
     await mermaid.run();
   });
 </script>
