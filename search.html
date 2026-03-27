@@ -10,54 +10,34 @@ type: page
   <h1 class="page-heading">Search Posts</h1>
 
   <div class="search-wrapper" style="margin: 20px 40px;">
-    <!-- 검색 입력창 -->
     <input type="text" id="search-input" placeholder="검색어를 입력하세요 (예: rust, ownership...)" 
            style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
     
-    <!-- 검색 결과가 출력될 영역 -->
     <ul id="results-container" style="list-style: none; padding: 0; margin-top: 30px;">
       <li id="initial-msg" style="color: #888; margin-left: 20px;">검색어를 입력하면 결과가 여기에 표시됩니다.</li>
     </ul>
   </div>
 </div>
 
+<!-- [중요] 라이브러리 전체 경로를 정확히 입력했습니다 -->
 <script src="https://cdn.jsdelivr.net"></script>
 
 <script>
-  // 라이브러리가 로드되었는지 체크한 후 실행하는 안전 장치
   function initSearch() {
+    // 라이브러리가 로드되었는지 확인
     if (typeof SimpleJekyllSearch === 'undefined') {
-      console.log("라이브러리 로딩 중... 0.5초 후 재시도");
+      console.log("라이브러리 재시도 중...");
       setTimeout(initSearch, 500);
       return;
     }
 
-    SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('results-container'),
-      json: '/search.json',
-      searchResultTemplate: '<li style="margin-bottom:10px;"><span style="color:#888;">{date}</span> <a href="{url}" style="font-weight:bold; color:#d32f2f;">{title}</a></li>',
-      noResultsText: '<li>검색 결과가 없습니다.</li>',
-      limit: 20,
-      fuzzy: false
-    });
-    console.log("검색 엔진 준비 완료!");
-  }
-
-  // 페이지 로드 시 실행
-  window.addEventListener('load', initSearch);
-</script>
-
-<script>
-  // 페이지 로딩 완료 후 실행되도록 보장합니다
-  window.onload = function() {
     var searchInput = document.getElementById('search-input');
-    var resultsContainer = document.getElementById('results-container');
     
+    // 초기화
     SimpleJekyllSearch({
       searchInput: searchInput,
-      resultsContainer: resultsContainer,
-      json: '/search.json', // 루트의 search.json 파일을 불러옵니다
+      resultsContainer: document.getElementById('results-container'),
+      json: '/search.json',
       searchResultTemplate: `
         <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
           <span style="color: #888; font-size: 0.9em; margin-right: 15px;">{date}</span>
@@ -69,16 +49,18 @@ type: page
       fuzzy: false
     });
 
-    // 검색 시작 시 초기 안내 메시지를 숨기는 기능
+    // 메세지 숨기기 로직
     searchInput.addEventListener('input', function() {
       var msg = document.getElementById('initial-msg');
       if (msg) {
-        if (this.value.length > 0) {
-          msg.style.display = 'none';
-        } else {
-          msg.style.display = 'block';
-        }
+        if (this.value.length > 0) msg.style.display = 'none';
+        else msg.style.display = 'block';
       }
     });
-  };
+
+    console.log("검색 엔진 준비 완료!");
+  }
+
+  // 페이지 로드 시 단 한 번만 실행
+  window.addEventListener('load', initSearch);
 </script>
