@@ -16,29 +16,45 @@ type: page
     
     <!-- 검색 결과가 출력될 영역 -->
     <ul id="results-container" style="list-style: none; padding: 0; margin-top: 30px;">
-      <!-- 검색 전 초기 안내 문구 (선택사항) -->
-      <li style="color: #888; margin-left: 20px;">검색어를 입력하면 결과가 여기에 표시됩니다.</li>
+      <li id="initial-msg" style="color: #888; margin-left: 20px;">검색어를 입력하면 결과가 여기에 표시됩니다.</li>
     </ul>
   </div>
 </div>
 
-<!-- Simple Jekyll Search 라이브러리 (CDN) -->
+<!-- [수정됨] 전체 경로가 포함된 정확한 라이브러리 주소입니다 -->
 <script src="https://unpkg.com"></script>
 
 <script>
-  SimpleJekyllSearch({
-    searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('results-container'),
-    json: '/search.json',
-    // 검색 결과 레이아웃 (아카이브 리스트 스타일과 맞춤)
-    searchResultTemplate: `
-      <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
-        <span style="color: #888; font-size: 0.9em; margin-right: 15px;">{date}</span>
-        <a href="{url}" style="font-weight: bold; color: #d32f2f; text-decoration: none; font-size: 1.1em;">{title}</a>
-      </li>
-    `,
-    noResultsText: '<li style="margin-left: 20px;">검색 결과가 없습니다.</li>',
-    limit: 50,
-    fuzzy: false // 정확한 검색을 원하시면 false, 유사 검색은 true
-  });
+  // 페이지 로딩 완료 후 실행되도록 보장합니다
+  window.onload = function() {
+    var searchInput = document.getElementById('search-input');
+    var resultsContainer = document.getElementById('results-container');
+    
+    SimpleJekyllSearch({
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
+      json: '/search.json', // 루트의 search.json 파일을 불러옵니다
+      searchResultTemplate: `
+        <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+          <span style="color: #888; font-size: 0.9em; margin-right: 15px;">{date}</span>
+          <a href="{url}" style="font-weight: bold; color: #d32f2f; text-decoration: none; font-size: 1.1em;">{title}</a>
+        </li>
+      `,
+      noResultsText: '<li style="margin-left: 20px;">검색 결과가 없습니다.</li>',
+      limit: 50,
+      fuzzy: false
+    });
+
+    // 검색 시작 시 초기 안내 메시지를 숨기는 기능
+    searchInput.addEventListener('input', function() {
+      var msg = document.getElementById('initial-msg');
+      if (msg) {
+        if (this.value.length > 0) {
+          msg.style.display = 'none';
+        } else {
+          msg.style.display = 'block';
+        }
+      }
+    });
+  };
 </script>
