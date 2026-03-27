@@ -20,9 +20,14 @@
 
     {% include footer.html %}
 
+    <!--
     {% if page.mermaid %}
     {% include mermaid.html %}
     {% endif %}
+    -->
     
+    {% if page.mermaid or layout.common_mermaid or content contains 'mermaid' %}
+      {% include mermaid.html %}
+    {% endif %}    
   </body>
 </html>
