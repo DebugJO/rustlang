@@ -20,15 +20,6 @@
 
     {% include footer.html %}
 
-{% if site.mermaid.enabled %}
-<script type="module">
-  import mermaid from '{{ site.mermaid.url }}';
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: '{{ site.mermaid.theme | default: "base" }}'
-  });
-</script>
-{% endif %}
     
   </body>
 </html>
