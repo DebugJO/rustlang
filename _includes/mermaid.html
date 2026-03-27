@@ -1,60 +1,60 @@
 <style>
-  /* 1. 기존 테마의 pre, code 스타일이 절대 침범하지 못하도록 강제 리셋 */
+  /* 1. Mermaid 컨테이너를 기존 코드 블록(pre)처럼 보이게 설정 */
   .mermaid {
-    display: block;
-    width: 100%;
-    background: none !important;   /* 배경 제거 */
-    border: none !important;       /* 테두리 제거 */
-    padding: 0 !important;        /* 패딩 완전 제거 */
-    margin: 10px 0 !important;    /* 위아래 간격만 최소화 */
-    line-height: 1 !important;    /* 줄간격 리셋 */
-    text-align: center;
+    /* 기존 다크 코드 블록의 배경색과 비슷하게 설정 (테마에 맞춰 자동 조절됨) */
+    background-color: #282c34 !important; /* 필요시 사용 중인 다크 배경색으로 수정 가능 */
+    border-radius: 6px;                  /* 코드 블록의 둥근 모서리 유지 */
+    padding: 20px 0;                     /* 다이어그램 위아래 여백 */
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;                    /* 모바일에서 잘림 방지 */
   }
 
-  /* 2. 생성된 SVG의 배경이나 외곽선도 타이트하게 조정 */
-  .mermaid svg {
-    max-width: 100% !important;
-    height: auto !important;
-    background: none !important;
+  /* 2. 로딩 전 마크다운 텍스트가 잠깐 보이는 현상 방지 */
+  .language-mermaid {
+    display: none;
   }
 </style>
 
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
-  document.addEventListener('DOMContentLoaded', function () {
-    // .language-mermaid 클래스를 가진 요소를 찾음
-    const mermaidElements = document.querySelectorAll('.language-mermaid');
+  // 다크 모드 설정을 포함하여 초기화
+  mermaid.initialize({
+    startOnLoad: false, // 수동 제어를 위해 false
+    theme: 'dark',      /* 핵심: 다크 테마 적용 */
+    logLevel: 3,
+    securityLevel: 'loose',
+    themeVariables: {
+      /* 다크 배경에 어울리도록 색상 미세 조정 (선택 사항) */
+      darkMode: true,
+      background: '#282c34', 
+      primaryColor: '#bb86fc',
+      lineColor: '#f8f8f2'
+    }
+  });
 
-    mermaidElements.forEach(function (el) {
-      // 1. 가장 안쪽의 텍스트(다이어그램 코드)만 추출
+  document.addEventListener('DOMContentLoaded', async function () {
+    const elements = document.querySelectorAll('.language-mermaid');
+    
+    for (let i = 0; i < elements.length; i++) {
+      const el = elements[i];
+      // Jekyll이 감싸고 있는 가장 바깥쪽 컨테이너 찾기
+      const container = el.closest('.highlighter-rouge') || el;
       const rawCode = el.innerText.trim();
-      
-      // 2. 새로운 클린 DIV 생성 (pre나 code 태그 아님)
-      const newDiv = document.createElement('div');
-      newDiv.className = 'mermaid';
-      newDiv.textContent = rawCode;
 
-      // 3. Jekyll이 만든 가장 바깥쪽 컨테이너(.highlighter-rouge)를 찾아 통째로 교체
-      // 이렇게 하면 pre, code 태그가 DOM에서 완전히 사라짐
-      const container = el.closest('.highlighter-rouge');
-      if (container) {
-        container.parentNode.replaceChild(newDiv, container);
-      } else {
-        // 혹시 모르니 부모가 highlighter-rouge가 아닐 경우에도 대비
-        el.parentNode.replaceChild(newDiv, el);
-      }
-    });
+      // 새로운 div 생성
+      const chartDiv = document.createElement('div');
+      chartDiv.className = 'mermaid';
+      chartDiv.setAttribute('id', 'mermaid-' + i);
+      chartDiv.textContent = rawCode;
 
-    // 4. Mermaid 초기화 (패딩 등 내부 설정 타이트하게)
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'dark', // 다크모드면 'dark'로 변경
-      securityLevel: 'loose',
-      // 다이어그램 내부 여백도 줄이고 싶다면 아래 설정 추가
-      flowchart: { useMaxWidth: true, htmlLabels: true },
-      sequence: { useMaxWidth: true, boxMargin: 5 },
-      er: { useMaxWidth: true }
-    });
+      // 기존 블록을 Mermaid 블록으로 교체
+      container.parentNode.replaceChild(chartDiv, container);
+    }
+    
+    // 렌더링 시작
+    await mermaid.run();
   });
 </script>
