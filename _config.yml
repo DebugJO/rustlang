@@ -58,3 +58,5 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
   math_engine: mathjax
+
+mermaid: true   
