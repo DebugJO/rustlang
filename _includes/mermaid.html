@@ -14,7 +14,7 @@
   /* 2. [초정밀] 선 두께 및 화살표 크기 조절 */
   /* 선 두께를 0.5px~0.8px 사이로 설정 (0.5는 너무 가늘어 안 보일 수 있음) */
   .mermaid .edgePath .path {
-    stroke-width: 0.8px !important; 
+    stroke-width: 0.5px !important; 
     stroke: #666 !important;
   }
 
@@ -33,7 +33,7 @@
 
   /* 박스가 너무 작아져서 글자가 겹치는 것 방지 */
   .mermaid .node rect, .mermaid .node circle, .mermaid .node polygon {
-    stroke-width: 1px !important;
+    stroke-width: 0.5px !important;
   }
 
   .language-mermaid { display: none; }
@@ -56,7 +56,7 @@
     themeVariables: {
       fontSize: '13px',
       fontFamily: 'arial',
-      nodePadding: 6,    /* 13px 폰트가 박스 테두리에 너무 붙지 않게 살짝 여백 */
+      nodePadding: 4,    /* 13px 폰트가 박스 테두리에 너무 붙지 않게 살짝 여백 */
       
       mainBkg: '#FFFFFF',
       canvasBackground: '#FFFFFF',
