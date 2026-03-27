@@ -14,11 +14,9 @@ categories: [Rust Tutorial]
 Categories
 [Liberal Artsㆍφιλοσοφία]
 [DatabaseㆍModeling]
-[PythonㆍGoㆍScript]
-[ServerㆍIT Technology]
 [C#ㆍ.NET Programming]
 [C/C++ㆍQTㆍDelphi]
-[RustㆍZig Tutorial]
+[RustㆍZigㆍGo Tutorial]
 
 텍스트
 
