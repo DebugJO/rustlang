@@ -28,7 +28,7 @@ type: page
     var searchInput = document.getElementById('search-input');
     var resultsContainer = document.getElementById('results-container');
     
-    new SimpleJekyllSearch({
+    var sjs = new SimpleJekyllSearch({
       searchInput: searchInput,
       resultsContainer: resultsContainer,
       json: '/search.json',
@@ -42,6 +42,24 @@ type: page
       limit: 50,
       fuzzy: false
     });
+
+    // [추가] 데이터 로딩 상태 확인용 디버깅
+    fetch('/search.json')
+      .then(response => {
+        if (!response.ok) throw new Error('네트워크 응답 에러');
+        return response.text();
+      })
+      .then(text => {
+        try {
+          JSON.parse(text);
+          console.log("✅ JSON 데이터 형식이 완벽합니다!");
+        } catch (e) {
+          console.error("❌ JSON 형식 오류 발생:", e.message);
+          console.log("오류가 난 데이터 일부:", text.substring(0, 200));
+        }
+      })
+      .catch(err => console.error("❌ 파일 로드 실패:", err));
+
 
     searchInput.addEventListener('input', function() {
       var msg = document.getElementById('initial-msg');
