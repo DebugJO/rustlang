@@ -1,9 +1,26 @@
-<!-- _includes/mermaid.html -->
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default' // 'dark', 'forest', 'neutral' 등으로 변경 가능
+
+  // 1. Jekyll(Rouge)이 입혀놓은 코드를 Mermaid가 읽을 수 있는 형태로 변환
+  document.addEventListener('DOMContentLoaded', function () {
+    const mermaidBlocks = document.querySelectorAll('pre.highlight > code.language-mermaid, .language-mermaid > pre');
+    
+    mermaidBlocks.forEach((block) => {
+      // 부모 요소들 중 가장 바깥쪽의 pre/div를 찾음
+      const container = block.closest('.highlighter-rouge') || block.parentElement;
+      
+      const div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = block.textContent; // 순수 텍스트만 추출
+      
+      container.parentNode.replaceChild(div, container);
+    });
+
+    // 2. Mermaid 초기화
+    mermaid.initialize({ 
+      startOnLoad: true, 
+      theme: 'base',
+      securityLevel: 'loose' 
+    });
   });
-  window.mermaid = mermaid;
 </script>
