@@ -1,26 +1,30 @@
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
-  // 1. Jekyll(Rouge)이 입혀놓은 코드를 Mermaid가 읽을 수 있는 형태로 변환
+  // 페이지 로드 후 실행
   document.addEventListener('DOMContentLoaded', function () {
-    const mermaidBlocks = document.querySelectorAll('pre.highlight > code.language-mermaid, .language-mermaid > pre');
-    
-    mermaidBlocks.forEach((block) => {
-      // 부모 요소들 중 가장 바깥쪽의 pre/div를 찾음
-      const container = block.closest('.highlighter-rouge') || block.parentElement;
+    // 1. Jekyll/Rouge가 만든 복잡한 태그 찾기
+    const codeBlocks = document.querySelectorAll('.language-mermaid');
+
+    codeBlocks.forEach(function (block) {
+      // 2. 그 안의 순수한 텍스트(다이어그램 코드)만 추출
+      const rawCode = block.innerText;
       
-      const div = document.createElement('div');
-      div.className = 'mermaid';
-      div.textContent = block.textContent; // 순수 텍스트만 추출
-      
-      container.parentNode.replaceChild(div, container);
+      // 3. 새로운 다이어그램용 DIV 생성
+      const mermaidDiv = document.createElement('div');
+      mermaidDiv.className = 'mermaid';
+      mermaidDiv.innerHTML = rawCode;
+
+      // 4. 기존의 복잡한 태그를 새 DIV로 교체
+      block.parentNode.insertBefore(mermaidDiv, block);
+      block.style.display = 'none'; // 기존 코드 블록은 숨김
     });
 
-    // 2. Mermaid 초기화
+    // 5. Mermaid 초기화 및 렌더링 시작
     mermaid.initialize({ 
-      startOnLoad: true, 
-      theme: 'base',
-      securityLevel: 'loose' 
+        startOnLoad: true,
+        theme: 'default',
+        securityLevel: 'loose'
     });
   });
 </script>
