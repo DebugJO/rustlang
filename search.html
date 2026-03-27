@@ -14,9 +14,10 @@ nav_exclude: true  <-- 메뉴에서 제외하는 옵션 (테마에 따라 다름
            style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; outline: none; border: 2px solid #eee;">
     
     <!-- 검색 결과 출력 영역 -->
-    <ul id="results-container" style="list-style: none; padding: 0; margin-top: 30px;">
-      <li id="initial-msg" style="color: #888; margin-left: 20px;">검색어를 입력하면 결과가 여기에 표시됩니다.</li>
-    </ul>
+    <ul id="results-container" 
+      style="list-style: none; padding: 0; margin-top: 30px; max-height: 600px; overflow-y: auto; border-top: 1px dashed #eee;">
+    <li id="initial-msg" style="color: #888; padding: 20px;">검색어를 입력하면 결과가 여기에 표시됩니다.</li>
+</ul>
   </div>
 </div>
 
