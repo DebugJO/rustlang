@@ -22,7 +22,7 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 ###### Geeky Pleasures
 
 <div style="text-align: center;">
- $X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-i \frac{2\pi}{N} kn}$ &nbsp;&nbsp;,&nbsp;nbsp; $X[k] = E[k] + W_N^k O[k]$ &nbsp;&nbsp;,&nbsp;&nbsp; $y = f(\sum_{i=1}^{n} w_i x_i + b)$
+ $X_k = \sum_{n=0}^{N-1} x_n \cdot e^{-i \frac{2\pi}{N} kn}$ &nbsp;&nbsp;,&nbsp;&nbsp; $X[k] = E[k] + W_N^k O[k]$ &nbsp;&nbsp;,&nbsp;&nbsp; $y = f(\sum_{i=1}^{n} w_i x_i + b)$
 </div>
 
 ###### Philosophical Religion => { NULL }
