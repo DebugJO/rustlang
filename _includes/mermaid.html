@@ -1,21 +1,32 @@
 <style>
-  /* 1. 외부 컨테이너: 여백을 더 타이트하게 조정 */
+  /* 1. 외부 컨테이너 스타일 */
   .mermaid {
     background-color: #FAFAFA !important;
     border: 1px solid #eee !important;
-    /* border-radius: 6px !important;*/         /* 라운드 살짝 줄임 */
-    /* padding: 10px !important; */            /* 외부 여백 20px -> 10px로 축소 */
+    /* border-radius: 6px !important; */
+    /* padding: 10px !important; */
     margin: -8px -8px !important;
     display: flex;
     justify-content: center;
     overflow-x: auto;
-    font-size: 13px !important;
   }
 
-  /* 2. SVG 내부 텍스트 및 간격 강제 제어 */
-  .mermaid svg {
+  /* 2. [핵심] 폰트 크기 강제 고정 (SVG 내부 모든 텍스트) */
+  .mermaid svg, 
+  .mermaid svg * {
     font-size: 13px !important;
-    max-width: 100% !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  }
+
+  /* 3. [핵심] 화살표(Arrowhead) 크기 축소 */
+  /* Mermaid의 화살표는 marker-end로 생성되므로 크기를 강제로 줄입니다. */
+  .mermaid .marker {
+    transform: scale(0.7); /* 화살표 크기를 70%로 축소 */
+  }
+  
+  /* 선 두께도 살짝 가늘게 하여 화살표와 조화롭게 만듦 */
+  .mermaid .edgePath .path {
+    stroke-width: 1.5px !important;
   }
 
   .language-mermaid { display: none; }
@@ -28,30 +39,31 @@
     startOnLoad: false,
     theme: 'base',
     securityLevel: 'loose',
-    // 차트 종류별로 내부 간격 강제 설정
+    // [중요] htmlLabels를 false로 해야 폰트 크기가 SVG 규칙에 따라 엄격하게 적용됩니다.
     flowchart: { 
-      htmlLabels: true,
+      htmlLabels: false, 
+      useMaxWidth: true,
       curve: 'linear',
-      padding: 10,           /* 차트 전체의 여백 축소 */
-      nodeSpacing: 30,       /* 노드 간의 간격 축소 */
-      rankSpacing: 30        /* 층 사이의 간격 축소 */
+      padding: 10,
+      nodeSpacing: 30,
+      rankSpacing: 30
     },
     themeVariables: {
-      fontFamily: 'arial, sans-serif',
+      /* Base 테마 설정 */
       fontSize: '13px',
-
-      /* [핵심] 박스 내부 여백 줄이기 */
-      nodePadding: 5,        /* 박스 안쪽의 상하좌우 여백 (기본값 약 10~15) */
+      fontFamily: 'arial',
       
+      // 박스 내부 여백 최소화
+      nodePadding: 4, 
+
       mainBkg: '#FFFFFF',
       canvasBackground: '#FFFFFF',
       primaryColor: '#f6f8fa',
       primaryTextColor: '#24292e',
       primaryBorderColor: '#d1d5da',
-      lineColor: '#444d56',
+      lineColor: '#666',      /* 선 색상을 살짝 진하게 하여 가늘어도 잘 보이게 함 */
       secondaryColor: '#0366d6',
-      tertiaryColor: '#f1f8ff',
-      edgeLabelBackground: '#ffffff'
+      tertiaryColor: '#f1f8ff'
     }
   });
 
@@ -71,6 +83,7 @@
       container.parentNode.replaceChild(chartDiv, container);
     }
     
+    // 렌더링 시작
     await mermaid.run();
   });
 </script>
