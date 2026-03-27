@@ -30,10 +30,8 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 foreach (Person person in people) { person.toHappy(); }
 ```
 
-<pre>
 ```mermaid
 graph LR
 A["Cpp, Rust, Zig"] --> B["AOT(C#)"]
 B --> C["Manged(C#)"]
 ```
-</pre>
