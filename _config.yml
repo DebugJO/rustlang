@@ -8,11 +8,11 @@ baseurl: ""
 timezone: Asia/Seoul
 
 description: >
-  Rust Language.
+  programing language.
   
 email: msjo@rustlang.kr
 
-author: MSJO
+author: msJ
 
 avatar: "https://raw.githubusercontent.com/DebugJO/debugjo.github.io/refs/heads/master/img/msj3.png"
 
