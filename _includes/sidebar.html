@@ -25,7 +25,7 @@
 
 <div class="col-box">
   <!-- <div class="col-box-title">Newest Posts <a class="rss-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed</a></div> -->
-  <div class="col-box-title">Newest Posts <a class="rss-link" href="https://rustlang.kr/search/">&nbsp;&nbsp;Search&nbsp;&nbsp;</span></a></div>  
+  <div class="col-box-title">Newest Posts <a class="rss-link" href="/search/">&nbsp;&nbsp;Search&nbsp;&nbsp;</span></a></div>  
   <ul class="post-list">
     {% for post in site.posts limit:10 %}
       <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
@@ -35,7 +35,7 @@
 
 <div class="col-box">
   <!-- <div class="col-box-title">Category <span style="color:lightsteelblue;">({{ site.posts | size }})</span> <a class="rss-link" style="color: #AAA; border: 1px solid #CCC; padding: 1px 4px;" href="https://rustlang.kr/feed.xml">RSS Feed</a></div> --> 
-  <div class="col-box-title">Category <span style="color:lightsteelblue;">({{ site.posts | size }})</span> <a class="rss-link" href="https://rustlang.kr/feed.xml">RSS Feed</a></div>  
+  <div class="col-box-title">Category <span style="color:lightsteelblue;">({{ site.posts | size }})</span> <a class="rss-link" href="/feed.xml">RSS Feed</a></div>  
   <ul class="post-list">
     {% for category in site.categories %}
       <li><a class="post-link" href="{{ root_url }}/category/#{{ category | first }}" cate="{{ category | first }}">{{ category | first }}</a> <span style="color:lightsteelblue;">({{ category | last | size }})</span></li>
@@ -51,7 +51,7 @@
 
 <div class="col-box">
 <center>
-  <a style="font-size:14px;color:#6a6a6a;" href="https://github.com/debugjo">Ⓒ2018 RustLang.kr</a>&nbsp;&nbsp;
+  <a style="font-size:14px;color:#6a6a6a;" href="https://github.com/debugjo">Ⓒ2018 DevSight.kr</a>&nbsp;&nbsp;
   <a style="font-size:14px;color:#6a6a6a;" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">ⒸBY-NC-ND</a>
 </center>
 </div>  
