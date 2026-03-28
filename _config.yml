@@ -1,6 +1,6 @@
 title: DEVSIGHT.kr
 
-url: "https://rustlang.kr" 
+url: "https://devsight.kr" 
 #url: "https://msjo.kr" 
 
 baseurl: ""
@@ -10,7 +10,7 @@ timezone: Asia/Seoul
 description: >
   programing language.
   
-email: msjo@rustlang.kr
+email: msjo@devsight.kr
 
 author: msJ
 
