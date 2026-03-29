@@ -25,11 +25,25 @@ nav_exclude: true
 	.gsc-orderby-container { display: none !important; }
 	.gsc-result-info-container { display: none !important; }
 	.gsc-control-cse .gs-spelling, .gsc-control-cse .gs-result .gs-title, .gsc-control-cse .gs-result .gs-title * {font-size: 16px; color : #003366! !important;}
-
-	.gstl_50 .gsc-completion-container {background-color: #FAFAFA !important;}
-	.gsc-completion-container .gsc-completion-selected { background-color: #eee !important;}
-	.gsc-completion-container .gsc-completion-selected,.gsc-completion-container td {background-color:  #eee !important;}
 	.gs-title, .gs-title b { color: #003366 !important; font-size: 16px !important; }
+
+	
+	/* 1. 전체 검색어 제안 창의 기본 배경색 (FAFAFA) */
+	.gsc-completion-container {
+    	background-color: #FAFAFA !important;
+		}
+
+/* 2. 각 행(td)의 기본 배경색 (투명하게 하여 컨테이너 색이 보이게 함) */
+.gsc-completion-container td {
+    background-color: transparent !important;
+}
+
+/* 3. 마우스 호버 및 키보드 선택 시 배경색 (eee) */
+.gsc-completion-container .gsc-completion-selected,
+.gsc-completion-container .gsc-completion-selected td {
+    background-color: #eee !important;
+}
+
 </style>
 
 <script>
