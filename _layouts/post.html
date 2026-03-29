@@ -16,41 +16,43 @@ layout: default
   {% include comment.html %}
 
 <!-- 구분선 -->
-<hr style="border: 0; border-top: 1px solid #ccc; margin: 30px 0;">
-
-<div class="pagination" style="display: flex; justify-content: center; align-items: center; padding: 0 40px;">  
-  {% assign first_post = site.posts.first %}
-  {% assign oldest_post = site.posts.last %}
-
-  <div style="flex: 1; text-align: left;">
-    {% if page.url == first_post.url %}
-      <span style="color: #ccc; cursor: default;">FIRST</span>
-    {% else %}
-      <a href="{{ first_post.url | relative_url }}" style="text-decoration: none; font-weight: normal; color: #666;">FIRST</a>
-    {% endif %}
-  </div>
-
-  <div style="flex: 2; display: flex; justify-content: center; gap: 70px;">
-    {% if page.next %}
-      <a href="{{ page.next.url | relative_url }}" style="min-width: 50px; text-align: center; text-decoration: none;">PREV</a>
-    {% else %}
-      <span style="color: #ccc; min-width: 50px; text-align: center;">PREV</span>
-    {% endif %}
-
-    {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}" style="min-width: 50px; text-align: center; text-decoration: none;">NEXT</a>
-    {% else %}
-      <span style="color: #ccc; min-width: 50px; text-align: center;">NEXT</span>
-    {% endif %}
-  </div>
-
-  <div style="flex: 1; text-align: right;">
-    {% if page.url == oldest_post.url %}
-      <span style="color: #ccc; cursor: default;">LAST</span>
-    {% else %}
-      <a href="{{ oldest_post.url | relative_url }}" style="text-decoration: none; font-weight: normal; color: #666;">LAST</a>
-    {% endif %}
+<!-- googleoff: index -->  
+<div data-nosnippet>  
+  <hr style="border: 0; border-top: 1px solid #ccc; margin: 30px 0;">
+  <div class="pagination" style="display: flex; justify-content: center; align-items: center; padding: 0 40px;">  
+    {% assign first_post = site.posts.first %}
+    {% assign oldest_post = site.posts.last %}
+  
+    <div style="flex: 1; text-align: left;">
+      {% if page.url == first_post.url %}
+        <span style="color: #ccc; cursor: default;">FIRST</span>
+      {% else %}
+        <a href="{{ first_post.url | relative_url }}" style="text-decoration: none; font-weight: normal; color: #666;">FIRST</a>
+      {% endif %}
+    </div>
+  
+    <div style="flex: 2; display: flex; justify-content: center; gap: 70px;">
+      {% if page.next %}
+        <a href="{{ page.next.url | relative_url }}" style="min-width: 50px; text-align: center; text-decoration: none;">PREV</a>
+      {% else %}
+        <span style="color: #ccc; min-width: 50px; text-align: center;">PREV</span>
+      {% endif %}
+  
+      {% if page.previous %}
+        <a href="{{ page.previous.url | relative_url }}" style="min-width: 50px; text-align: center; text-decoration: none;">NEXT</a>
+      {% else %}
+        <span style="color: #ccc; min-width: 50px; text-align: center;">NEXT</span>
+      {% endif %}
+    </div>
+  
+    <div style="flex: 1; text-align: right;">
+      {% if page.url == oldest_post.url %}
+        <span style="color: #ccc; cursor: default;">LAST</span>
+      {% else %}
+        <a href="{{ oldest_post.url | relative_url }}" style="text-decoration: none; font-weight: normal; color: #666;">LAST</a>
+      {% endif %}
+    </div>
   </div>
 </div>
-
+<!-- googleon: index -->  
 </div>
