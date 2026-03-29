@@ -31,32 +31,47 @@ nav_exclude: true
 	/* 1. 전체 검색어 제안 창의 기본 배경색 (FAFAFA) */
 	.gsc-completion-container {
     	background-color: #FAFAFA !important;
-		}
+	}
 
-/* 2. 각 행(td)의 기본 배경색 (투명하게 하여 컨테이너 색이 보이게 함) */
-.gsc-completion-container td {
-    background-color: transparent !important;
-}
+	/* 2. 각 행(td)의 기본 배경색 (투명하게 하여 컨테이너 색이 보이게 함) */
+	.gsc-completion-container td {
+    	background-color: transparent !important;
+	}
 
-/* 3. 마우스 호버 및 키보드 선택 시 배경색 (eee) */
-.gsc-completion-container .gsc-completion-selected,
-.gsc-completion-container .gsc-completion-selected td {
-    background-color: #eee !important;
-}
+	/* 3. 마우스 호버 및 키보드 선택 시 배경색 (eee) */
+	.gsc-completion-container .gsc-completion-selected,
+	.gsc-completion-container .gsc-completion-selected td {
+   		background-color: #eee !important;
+	}
 	/* 마우스 커서를 올리는 즉시(Hover) eee 색상이 적용되도록 강제 */
-.gsc-completion-container .gsc-completion-selected,
-.gsc-completion-container td:hover {
-    background-color: #eee !important;
-}
+	.gsc-completion-container .gsc-completion-selected,
+	.gsc-completion-container td:hover {
+    	background-color: #eee !important;
+	}
 
-/* 혹시 남아있을 수 있는 구글 기본 노란색 잔상을 완전히 제거 */
-.gsc-completion-container .gsc-completion-selected td,
-.gsc-completion-container td:hover {
-    background-color: #eee !important;
-}
+	/* 혹시 남아있을 수 있는 구글 기본 노란색 잔상을 완전히 제거 */
+	.gsc-completion-container .gsc-completion-selected td,
+	.gsc-completion-container td:hover {
+    	background-color: #eee !important;
+	}
 
-.gs-bidi-start-align gs-visibleUrl gs-visibleUrl-breadcrumb { display: none !important; }
+	/* 1. 모든 결과 내 가시적 URL 및 브레드크럼 숨기기 */
+	.gsc-webResult .gs-visibleUrl,
+	.gsc-webResult .gs-visibleUrl-breadcrumb,
+	.gsc-webResult .gs-bidi-start-align {
+    	display: none !important;
+	}
 
+	/* 2. (추가 확인) 특정 레이아웃에서 다른 클래스를 사용하는 경우까지 대비 */
+	div.gs-visibleUrl-breadcrumb, 
+	div.gs-visibleUrl, 
+	.gs-result .gs-visibleUrl-breadcrumb {
+    	display: none !important;
+    	visibility: hidden !important;
+    	height: 0 !important;
+    	margin: 0 !important;
+    	padding: 0 !important;
+	}
 </style>
 
 <script>
