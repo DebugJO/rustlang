@@ -25,7 +25,7 @@
 
 <div class="col-box">
   <!-- <div class="col-box-title">Newest Posts <a class="rss-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed</a></div> -->
-  <div class="col-box-title">Newest Posts <a class="rss-link" href="/search/">&nbsp;&nbsp;Search&nbsp;&nbsp;</span></a></div>  
+  <div class="col-box-title">Newest Posts <a class="rss-link" href="/gsearch/">&nbsp;&nbsp;Search&nbsp;&nbsp;</span></a></div>  
   <ul class="post-list">
     {% for post in site.posts limit:10 %}
       <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
