@@ -55,15 +55,14 @@ nav_exclude: true
     	background-color: #eee !important;
 	}
 
-	/* 1. URL 및 브레드크럼(경로) 숨기기 */
+	/* URL 및 브레드크럼(경로) 숨기기 */
 	.gsc-webResult .gs-visibleUrl,
 	.gsc-webResult .gs-visibleUrl-breadcrumb,
 	.gsc-webResult .gs-visibleUrl-short {
     	display: none !important;
 	}
 
-	/* 2. 본문 내용(Snippet)은 살리고 내부의 '날짜'만 숨기기 */
-	/* .gs-bidi-start-align 자체를 숨기면 내용이 안 나오므로 내부 날짜 클래스만 타겟팅 */
+	/* 본문 내용(Snippet)은 살리고 내부의 '날짜'만 숨기기 */
 	.gsc-webResult .gs-relativePublishedDate,
 	.gsc-webResult .gs-snippet .gs-date {
     	display: none !important;
@@ -73,7 +72,6 @@ nav_exclude: true
     	display: block !important;
     	visibility: visible !important;
     	height: auto !important;
-    	margin-top: 5px !important; /* 타이틀과의 간격 조절 */
 	}
 </style>
 
