@@ -43,6 +43,18 @@ nav_exclude: true
 .gsc-completion-container .gsc-completion-selected td {
     background-color: #eee !important;
 }
+	/* 마우스 커서를 올리는 즉시(Hover) eee 색상이 적용되도록 강제 */
+.gsc-completion-container .gsc-completion-selected,
+.gsc-completion-container td:hover {
+    background-color: #eee !important;
+}
+
+/* 혹시 남아있을 수 있는 구글 기본 노란색 잔상을 완전히 제거 */
+.gsc-completion-container .gsc-completion-selected td,
+.gsc-completion-container td:hover {
+    background-color: #eee !important;
+}
+
 
 </style>
 
