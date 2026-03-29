@@ -18,6 +18,9 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * **Programming Language**: C#, Rust, Zig, C++, Go
 * **Database**: Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
 
+###### Devsight Search Posts
+* 사이트 내 키워드 검색 : [Search Posts](https://devsight.kr/search/)
+
 ###### 참고문헌 작성법
 
 * 저서 : 글쓴이, 책이름, 출판사, 출판연도, 인용한 쪽 수
@@ -30,7 +33,3 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * 바로 위 참고 : ibid., p100
 * 본문 내 다시 참고 : 글쓴이, op. cit., p100
 * 참고문헌 작성법 안내 : [서울대학교](https://libguide.snu.ac.kr/c.php?g=321609&p=2151776) \| [중앙대학교](https://researchguide.cau.ac.kr/citation) \| [University of Pittsburgh](https://pitt.libguides.com/citationhelp)
-
-###### Devsight Search Posts
-* 사이트 내 키워드 검색 : [Search Posts](https://devsight.kr/search/)
-  
