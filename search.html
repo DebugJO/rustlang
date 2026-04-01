@@ -23,70 +23,71 @@ nav_exclude: true  <-- 메뉴에서 제외하는 옵션 (테마에 따라 다름
 </div>
 
 <script>
-(function() {
-    var searchInput = document.getElementById('search-input');
-    var resultsContainer = document.getElementById('results-container');
-    var initialMsg = document.getElementById('initial-msg');
-    var searchData = [];
-
-    // 1. 페이지 로드 시 search.json 데이터를 미리 가져옵니다.
-    fetch('/search.json')
-        .then(response => {
-            if (!response.ok) throw new Error('데이터 로드 실패');
-            return response.json();
-        })
-        .then(data => {
-            searchData = data;
-            console.log("🚀 검색 데이터 로드 완료 (총 " + data.length + "개)");
-        })
-        .catch(err => {
-            console.error("❌ 에러 발생:", err);
-            resultsContainer.innerHTML = '<li style="color:red;">검색 데이터를 불러오지 못했습니다.</li>';
-        });
-
-    // 2. 검색 입력 감지 (타이핑할 때마다 실행)
-    searchInput.addEventListener('input', function(e) {
-        var query = e.target.value.toLowerCase().trim();
-        resultsContainer.innerHTML = ''; // 기존 결과 비우기
-
-        if (query.length > 0) {
-            if (initialMsg) initialMsg.style.display = 'none';
-        }
-      
-        if (query.length >= 2) {
-            // 안내 메시지 숨기기
-            // if (initialMsg) initialMsg.style.display = 'none';
-
-            // 데이터 필터링 (제목 또는 본문에 키워드 포함 여부 확인)
-            var filtered = searchData.filter(function(item) {
-                return (item.title && item.title.toLowerCase().includes(query)) || 
-                       (item.content && item.content.toLowerCase().includes(query));
-            });
-
-            // 3. 필터링된 결과 화면에 출력
-            if (filtered.length > 0) {
-                filtered.forEach(function(item) {
-                    var li = document.createElement('li');
-                    li.style.cssText = "margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;";
-                    li.innerHTML = `
-                        <div style="margin-bottom: 5px;">
-                            <a href="${item.url}" style="font-weight: bold; color: #036; text-decoration: none; font-size: 1.15em;">${item.title}</a>
-                            <span style="color: #888; font-size: 0.85em; margin-left: 10px;">${item.date}</span>
-                        </div>
-                        <div style="font-size: 0.9em; color: #666; line-height: 1.6; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
-                            ${item.content}
-                        </div>
-                    `;
-                    resultsContainer.appendChild(li);
-                });
-            } else {
-                resultsContainer.innerHTML = '<li style="margin-left: 20px; color: #888;">검색 결과가 없습니다.</li>';
-            }
-        } else {
-            // 입력창이 비었을 때 초기 메시지 다시 표시
-            if (initialMsg) initialMsg.style.display = 'block';
-            resultsContainer.appendChild(initialMsg);
-        }
-    });
-})();
+  (function() {
+      var searchInput = document.getElementById('search-input');
+      var resultsContainer = document.getElementById('results-container');
+      var initialMsg = document.getElementById('initial-msg');
+      var searchData = [];
+  
+      // 1. 페이지 로드 시 search.json 데이터를 미리 가져옵니다.
+      fetch('/search.json')
+          .then(response => {
+              if (!response.ok) throw new Error('데이터 로드 실패');
+              return response.json();
+          })
+          .then(data => {
+              searchData = data;
+              console.log("🚀 검색 데이터 로드 완료 (총 " + data.length + "개)");
+          })
+          .catch(err => {
+              console.error("❌ 에러 발생:", err);
+              resultsContainer.innerHTML = '<li style="color:red;">검색 데이터를 불러오지 못했습니다.</li>';
+          });
+  
+      // 2. 검색 입력 감지 (타이핑할 때마다 실행)
+      searchInput.addEventListener('input', function(e) {
+          var query = e.target.value.toLowerCase().trim();
+          resultsContainer.innerHTML = ''; // 기존 결과 비우기
+  
+          if (query.length > 0) {
+              if (initialMsg) initialMsg.style.display = 'none';
+          }
+        
+          if (query.length >= 2) {
+              // 안내 메시지 숨기기
+              // if (initialMsg) initialMsg.style.display = 'none';
+  
+              // 데이터 필터링 (제목 또는 본문에 키워드 포함 여부 확인)
+              var filtered = searchData.filter(function(item) {
+                  return (item.title && item.title.toLowerCase().includes(query)) || 
+                         (item.content && item.content.toLowerCase().includes(query));
+              });
+  
+              // 3. 필터링된 결과 화면에 출력
+              if (filtered.length > 0) {
+                  filtered.forEach(function(item) {
+                      var li = document.createElement('li');
+                      li.style.cssText = "margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;";
+                      li.innerHTML = `
+                          <div style="margin-bottom: 5px;">
+                              <a href="${item.url}" style="font-weight: bold; color: #036; text-decoration: none; font-size: 1.15em;">${item.title}</a>
+                              <span style="color: #888; font-size: 0.85em; margin-left: 10px;">${item.date}</span>
+                          </div>
+                          <div style="font-size: 0.9em; color: #666; line-height: 1.6; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                              ${item.content}
+                          </div>
+                      `;
+                      resultsContainer.appendChild(li);
+                  });
+              } else {
+                  resultsContainer.innerHTML = '<li style="margin-left: 20px; color: #888;">검색 결과가 없습니다.</li>';
+              }
+          } else {
+              // 입력창이 비었을 때 초기 메시지 다시 표시
+              if (initialMsg) initialMsg.style.display = 'block';
+              resultsContainer.appendChild(initialMsg);
+          }
+      });
+  })();
+window.onload = function() { var input = document.getElementById("search-input").focus(); }  
 </script>
