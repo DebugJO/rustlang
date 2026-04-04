@@ -8,7 +8,7 @@ Rust Language website
 ---
 layout: post
 title:  "Style Test"
-categories: [Rust Tutorial]
+categories: [C#ㆍ.NET Programming]
 ---
 
 Categories
