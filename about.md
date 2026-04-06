@@ -30,6 +30,8 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * 인터넷기사 : 기사제목, 매체이름, 작성일시, URL, 접속일자
 * 사전 : 단어(항목), 사전이름, 출판사, 출판연도
 * 인터넷 사전(검색어) : 사이트 이름, 검색어(항목), URL, 참고한 날짜
-* 바로 위 참고 : ibid., p100
-* 본문 내 다시 참고 : 글쓴이, op. cit., p100
+* 바로 위 참고 : ibid., p.100
+* 본문 내 다시 참고 : 글쓴이, op. cit., p.100
 * 참고문헌 작성법 안내 : [서울대학교](https://libguide.snu.ac.kr/c.php?g=321609&p=2151776) \| [중앙대학교](https://researchguide.cau.ac.kr/citation) \| [University of Pittsburgh](https://pitt.libguides.com/citationhelp)
+* 예: 홍길동, *한국 현대사의 이해*, 가나출판사, 2023, p. 435.
+* 예: 홍길동,『한국 현대사의 이해』, 가나출판사, 2023, p. 435.
