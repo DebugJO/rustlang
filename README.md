@@ -67,7 +67,7 @@ title:  "C#에서 AOT로 NLog사용하기"
 categories: [C#ㆍ.NET Programming]
 mermaid: true
 ---
-```
+
 
 ```mermaid
 graph LR
