@@ -33,5 +33,3 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * 바로 위 참고 : ibid., p.100
 * 본문 내 다시 참고 : 글쓴이, op. cit., p.100
 * 참고문헌 작성법 안내 : [서울대학교](https://libguide.snu.ac.kr/c.php?g=321609&p=2151776) \| [중앙대학교](https://researchguide.cau.ac.kr/citation) \| [University of Pittsburgh](https://pitt.libguides.com/citationhelp)
-* 예: 홍길동, *한국 현대사의 이해*, 가나출판사, 2023, p. 435.
-* 예: 홍길동,『한국 현대사의 이해』, 가나출판사, 2023, p. 435.
