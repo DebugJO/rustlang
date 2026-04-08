@@ -19,7 +19,7 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * **Database**: Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
 
 ###### Devsight, Search Posts
-* 사이트 내 키워드 검색 : [Search Posts](https://devsight.kr/search/)
+* 사이트 내 키워드 검색 : [**Search Posts**](https://devsight.kr/search/)
 
 ###### 참고문헌 작성법
 
