@@ -33,7 +33,7 @@ excerpt_separator: <!--more-->
 /iframe>
 </div>
 
-이미지 :
+이미지 : 67 * 2 = 1340
 ![redox](https://raw.githubusercontent.com/DebugJO/rustlang/main/image/redox.jpg)
 [![ConfuserEx](https://xxx.yyy/images/zzz.jpg)](https://xxx.yyy/ConfuserEx)
 
