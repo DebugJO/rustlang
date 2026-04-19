@@ -18,6 +18,12 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * **Programming Language**: C#, Rust, Zig, C++, Go
 * **Database**: Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
 
+<img src="https://raw.githubusercontent.com/DebugJO/rustlang/refs/heads/main/image/CS.png" width="40" height="40">&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/DebugJO/rustlang/refs/heads/main/image/Rust.png" width="40" height="40">&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/DebugJO/rustlang/refs/heads/main/image/Zig.png" width="40" height="40">&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/DebugJO/rustlang/refs/heads/main/image/CPP.png" width="40" height="40">&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/DebugJO/rustlang/refs/heads/main/image/Go.png" width="40" height="40">
+
 ###### Devsight, Search Posts
 * 사이트 내 키워드 검색 : [**Search Posts**](https://devsight.kr/search/)
 
