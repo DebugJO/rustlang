@@ -15,8 +15,9 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * Telegram : @debug [(t.me/debug)](https://t.me/debug)
 
 ###### Software Engineer / Developer
-* **Programming Language**: C#, Rust, Zig, C++, Go
-* **Database**: Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
+* **Language** : C#, Rust, Zig, C++, Go
+* **Database** : Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
+* **Desktop**  : Avalonia, WPF, Qt, Electrobun, Blazor(MAUI Blazor Hybrid)
 
 ###### Devsight, Search Posts
 * 사이트 내 키워드 검색 : [**Search Posts**](https://devsight.kr/search/)
