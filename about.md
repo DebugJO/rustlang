@@ -17,7 +17,7 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 ###### Software Engineer / Developer
 * **Language** : C#, Rust, Zig, C++, Go
 * **Database** : Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
-* **Desktop**  : Avalonia, WPF, Qt, Electrobun, Blazor(MAUI Blazor Hybrid)
+* **Desktop**  : Avalonia, WPF, Qt, Electrobun, Blazor
 
 ###### Devsight, Search Posts
 * 사이트 내 키워드 검색 : [**Search Posts**](https://devsight.kr/search/)
