@@ -15,7 +15,7 @@ Categories
 [Liberal Artsㆍφιλοσοφία]
 [DatabaseㆍModeling]
 [C#ㆍ.NET Programming]
-[C/C++ㆍQTㆍDelphi]
+[C/C++ㆍQTㆍElectron]
 [RustㆍZigㆍGo Tutorial]
 
 텍스트
