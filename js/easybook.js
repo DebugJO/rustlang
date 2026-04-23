@@ -1,6 +1,6 @@
 function TOCize(toc, content, matchHeightTo) {
 
-    console.log("002");
+    console.log("003");
     
     if (!(toc && content && matchHeightTo)) return false
     
@@ -59,8 +59,9 @@ function TOCize(toc, content, matchHeightTo) {
     // 신규 추가
     function scrollToHeader(header, hash, ev) {
         var isMobile = window.innerWidth <= 768;
-        var hpHeight = document.querySelector('.header-placeholder').offsetHeight;
-        var headerOffset = isMobile ? hpHeight + 10 : hpHeight + 20; 
+        var hp = document.querySelector('.header-placeholder');
+        var hpHeight = hp ? hp.offsetHeight : 0;
+        var headerOffset = isMobile ? 60 : hpHeight + 20;
         var y = header.getBoundingClientRect().top + aniscroll.getTop() - headerOffset;
         
         if (window.history['pushState']) {
@@ -170,9 +171,8 @@ function TOCize(toc, content, matchHeightTo) {
         var hp = document.querySelector('.header-placeholder');
         var hpHeight = hp ? hp.offsetHeight : 0;
         var isMobile = window.innerWidth <= 768;
-        
-        // 만약 여전히 TOC가 타이틀바를 가린다면 이 값을 20, 30 늘림
-        var placeholderCorrection = isMobile ? 10 : 0; 
+
+        var placeholderCorrection = isMobile ? 60 : 0; 
         
         var dummyClientTop = scrolldummy.getBoundingClientRect().top - hpHeight + placeholderCorrection;
         var margin = 10, c, d;
@@ -233,14 +233,25 @@ function PalmSidebar() {
         var isMobile = ww <= 768;
 
         if (isMobile) {
-            // [수정] 본문이 잘리므로 여백을 줄이지 말고 실제 헤더 높이를 그대로 사용합니다.
-            header_placeholder.style.height = actualHeight + 'px'; 
+            // [분석 결과 적용]
+            // 메뉴가 열려있으면(expand-sidebar) 30px, 아니면 0px
+            var isMenuOpen = /expand-sidebar/.test(pcw.className);
+            header_placeholder.style.height = isMenuOpen ? '30px' : '0px';
         } else {
             header_placeholder.style.height = actualHeight + 'px';
         }
     }
-    
+
     function toggleSidebar(e) {
+       // if (/expand-sidebar/.test(pcw.className)) {
+       //     pcw.className = pcw.className.replace(/\s*expand-sidebar\s*/, ' ');
+       //     header.className = header.className.replace(/\s*expand-sidebar\s*/, ' ');
+       //  } else {
+       //      pcw.className += " expand-sidebar";
+       //     header.className += " expand-sidebar";
+       //  }
+       // setTimeout(s1, 200);
+        
         if (/expand-sidebar/.test(pcw.className)) {
             pcw.className = pcw.className.replace(/\s*expand-sidebar\s*/, ' ');
             header.className = header.className.replace(/\s*expand-sidebar\s*/, ' ');
