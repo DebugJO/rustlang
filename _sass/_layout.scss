@@ -62,9 +62,17 @@ $col-main-width: 770px; /* 800 750 */
 $col-secnod-width: 350px; /* 300 350 */
 $hide-sidebar-screen-width: 1120px; /* 1120 */
 
-.header-placeholder { position: absolute; }
+.header-placeholder { 
+	/*position: absolute; */ /* 추가에 의해 삭제 */ 
+	display: block; /* 추가 */
+	display: none; /* 추가 */
+	height: 50px; /* 추가 */
+}
 @media (max-width: $hide-sidebar-screen-width) {
-    .header-placeholder { position: static; }
+    .header-placeholder { 
+		/* position: static; */ /* 추가에 의해 삭제 */
+		display: none; /* 추가 */
+	}
     .header { 
         position: fixed; left: 0; top: 0; right: 0; z-index: 20;
         #sidebar-toggle {
