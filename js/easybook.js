@@ -1,6 +1,6 @@
 function TOCize(toc, content, matchHeightTo) {
 
-    console.log("11111");
+    console.log("2222");
     
     if (!(toc && content && matchHeightTo)) return false
     
@@ -244,18 +244,17 @@ function PalmSidebar() {
         var h = header.getBoundingClientRect();
         var actualHeight = h.height || (h.bottom - h.top);
         
-        // [중요] 데스크탑/모바일 모두 헤더가 Fixed라면 placeholder는 
-        // 항상 헤더 높이만큼만 가져야 합니다.
-        // 만약 모바일에서만 유독 간격이 벌어진다면 0px로 강제하거나 수치를 줄여야 합니다.
-        
         var isMobile = ww <= 768;
+
         if (isMobile) {
-            // 모바일에서 간격이 벌어진다면 actualHeight 대신 0 또는 더 작은 값을 넣어보세요.
-            header_placeholder.style.height = actualHeight + 'px'; 
+            var adjustedHeight = actualHeight - 50; 
+            if (adjustedHeight < 0) adjustedHeight = 0;
+            
+            header_placeholder.style.height = adjustedHeight + 'px';
         } else {
             header_placeholder.style.height = actualHeight + 'px';
         }
-    }    
+    }   
     
     function toggleSidebar(e) {
         if (/expand-sidebar/.test(pcw.className)) {
