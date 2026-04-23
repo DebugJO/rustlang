@@ -66,6 +66,7 @@ $col-main-width: 770px; /* 800 750 */
 $col-secnod-width: 350px; /* 300 350 */
 $hide-sidebar-screen-width: 1120px; /* 1120 */
 
+/*
 .col-box.post-toc {
     position: -webkit-sticky;
     position: sticky !important; 
@@ -74,6 +75,7 @@ $hide-sidebar-screen-width: 1120px; /* 1120 */
     max-height: calc(100vh - 80px) !important;
     overflow-y: auto; 
 }
+*/
 
 .header-placeholder { 
 	/*position: absolute; */ /* 추가에 의해 삭제 */ 
@@ -87,7 +89,8 @@ $hide-sidebar-screen-width: 1120px; /* 1120 */
     	margin: 0; /*추가*/
     	padding: 0; /*추가*/
 	}
-	
+
+	/*
 	col-box.post-toc {
         position: fixed !important;
         top: 50px !important;
@@ -98,6 +101,7 @@ $hide-sidebar-screen-width: 1120px; /* 1120 */
         overflow-y: auto !important; 
         background-color: $header-bg; 
     }
+	*/
 	
     .header { 
         position: fixed; left: 0; top: 0; right: 0; z-index: 20;
