@@ -86,9 +86,6 @@ $hide-sidebar-screen-width: 1120px; /* 1120 */
     background-color: #fff; /* 배경이 투명하면 본문과 겹치니 확인 */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 살짝 그림자를 주면 더 잘 보입니다 */
 }
-.col-box.post-toc.hide {
-    display: none !important;
-}
 
 .header-placeholder { 
 	/*position: absolute; */ /* 추가에 의해 삭제 */ 
