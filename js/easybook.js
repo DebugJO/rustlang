@@ -33,7 +33,8 @@ function TOCize(toc, content, matchHeightTo) {
     }
 
     function scrollToHeader(header, hash, ev) {
-        var y = header.getBoundingClientRect().top + aniscroll.getTop();
+        var headerOffset = 60;
+        var y = header.getBoundingClientRect().top + aniscroll.getTop() - headerOffset; // - headerOffset 추가
         if (window.history['pushState']) {
             window.history.pushState({}, header.textContent, "#" + hash);
             aniscroll.to(y);
@@ -103,7 +104,7 @@ function TOCize(toc, content, matchHeightTo) {
     var s1 = function () {
         var scrollTop = aniscroll.getTop(), dummyClientTop = scrolldummy.getBoundingClientRect().top - header_placeholder.offsetHeight,
             margin = 10, c, d; // c = dummyHeight, d = TOC.maxHeight (+'px')
-        if ((c = -dummyClientTop + margin) < 0) c = 0;
+        if ((c = -dummyClientTop + margin + 50) < 0) c = 0; //50 추가
         if (c) {
             var wh = window.innerHeight
                 || document.documentElement.clientHeight
