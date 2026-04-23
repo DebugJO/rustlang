@@ -66,6 +66,15 @@ $col-main-width: 770px; /* 800 750 */
 $col-secnod-width: 350px; /* 300 350 */
 $hide-sidebar-screen-width: 1120px; /* 1120 */
 
+.col-box.post-toc {
+    position: fixed;    /* 화면에 고정 */
+    top: 60px;         /* 헤더 높이(50px) + 여유공간(10px) 만큼 아래로 내림 */
+    right: 20px;       /* 우측 여백 */
+    max-height: calc(100vh - 80px); /* 화면 높이를 벗어나지 않게 조절 */
+    overflow-y: auto;   /* 내용이 길면 사이드바 안에서 스크롤 */
+    z-index: 999;      /* 헤더(1000)보다는 아래, 본문보다는 위 */
+}
+
 .header-placeholder { 
 	/*position: absolute; */ /* 추가에 의해 삭제 */ 
 	display: none; /* 추가 */
@@ -78,6 +87,11 @@ $hide-sidebar-screen-width: 1120px; /* 1120 */
     	margin: 0; /*추가*/
     	padding: 0; /*추가*/
 	}
+	.col-box.post-toc {
+        top: 50px;     /* 모바일 헤더 높이에 맞춤 */
+        right: 0;
+        width: 100%;    /* 모바일에서는 전체 너비로 보일 경우 */
+    }
     .header { 
         position: fixed; left: 0; top: 0; right: 0; z-index: 20;
         #sidebar-toggle {
