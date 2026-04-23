@@ -1,6 +1,6 @@
 function TOCize(toc, content, matchHeightTo) {
 
-    console.log("2222");
+    console.log("33333");
     
     if (!(toc && content && matchHeightTo)) return false
     
@@ -59,9 +59,8 @@ function TOCize(toc, content, matchHeightTo) {
     // 신규 추가
     function scrollToHeader(header, hash, ev) {
         var isMobile = window.innerWidth <= 768;
-        // 타이틀바가 고정되어 있으므로 그 높이만큼 빼줘야 글자가 가려지지 않음
         var hpHeight = document.querySelector('.header-placeholder').offsetHeight;
-        var headerOffset = isMobile ? hpHeight + 10 : hpHeight + 20; 
+        var headerOffset = hpHeight + 20; 
         
         var y = header.getBoundingClientRect().top + aniscroll.getTop() - headerOffset;
         
@@ -169,43 +168,34 @@ function TOCize(toc, content, matchHeightTo) {
     */
     // 신규 추가
     var s1 = function () {
-        var scrollTop = aniscroll.getTop();
         var hp = document.querySelector('.header-placeholder');
         var hpHeight = hp ? hp.offsetHeight : 0;
         
-        // TOC의 상대 위치 계산
         var dummyClientTop = scrolldummy.getBoundingClientRect().top - hpHeight;
         var margin = 10, c, d;
 
-        // [중요] 화면 너비로 모바일/데스크탑 구분 (둘 다 Fixed이므로 position으로 구분 불가)
         var isMobile = window.innerWidth <= 768; 
-        var offsetAdjustment = isMobile ? 0 : 50; 
+        // [수정] 모바일에서도 타이틀바에 가려지지 않게 50px 정도 여유를 줌
+        // 데스크탑은 기존 50px 유지, 모바일은 상황에 따라 40~50px 조정
+        var offsetAdjustment = isMobile ? 50 : 50; 
 
-        // 계산식에 offsetAdjustment를 반드시 포함해야 데스크탑에서 TOC가 고정됨
         if ((c = -dummyClientTop + margin + offsetAdjustment) < 0) c = 0; 
 
         if (c) {
-            var wh = window.innerHeight
-                || document.documentElement.clientHeight
-                || document.body.clientHeight,
+            var wh = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
                 cbox = matchHeightTo.getBoundingClientRect(),
                 vq = cbox.bottom - dummyClientTop - uls[0].offsetHeight;
             if (c > vq) c = vq;
             d = (wh - (margin << 1)) + 'px';
-        } else {
-            d = "";
-        }
-
+        } else { d = ""; }
+        
         if (d != maxHeightTOC) {
             maxHeightTOC = d;
-            if (d) {
-                uls[0].setAttribute('style', 'max-height:' + d + '; width:' + (toc.offsetWidth - 20) + "px");
-            } else {
-                uls[0].setAttribute("style", "");
-            }
+            if (d) { uls[0].setAttribute('style', 'max-height:' + d + '; width:' + (toc.offsetWidth - 20) + "px"); }
+            else { uls[0].setAttribute("style", ""); }
         }
         scrolldummy.style.height = (c + 'px');
-    };    
+    };  
     window.addEventListener('scroll', s1, false);
     window.addEventListener('resize', s1, false);
 }
@@ -237,24 +227,18 @@ function PalmSidebar() {
     */
     // 신규 추가
     function s1() {
-        ww = window.innerWidth
-            || document.documentElement.clientWidth
-            || document.body.clientWidth;
-        
+        ww = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         var h = header.getBoundingClientRect();
         var actualHeight = h.height || (h.bottom - h.top);
         
         var isMobile = ww <= 768;
 
         if (isMobile) {
-            var adjustedHeight = actualHeight - 50; 
-            if (adjustedHeight < 0) adjustedHeight = 0;
-            
-            header_placeholder.style.height = adjustedHeight + 'px';
+            header_placeholder.style.height = (actualHeight + 10) + 'px'; 
         } else {
             header_placeholder.style.height = actualHeight + 'px';
         }
-    }   
+    }  
     
     function toggleSidebar(e) {
         if (/expand-sidebar/.test(pcw.className)) {
