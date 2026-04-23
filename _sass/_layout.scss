@@ -36,19 +36,8 @@ body {
 	}
 	
     #sidebar-toggle { 
-		/* display: none; 추가헤 의한 삭제 sidebar-toggle안은 모두 새로운것*/
-		display: block;    /* none에서 block으로 변경 (데스크탑에서도 보이게 함) */
-        float: left;       /* 또는 우측을 원하시면 right */
-        cursor: pointer;
-        margin-right: 15px; /* 타이틀(☰제목)과의 간격 */
-        
-        /* 세로 위치 조절 (가장 중요) */
-        position: relative;
-        top: 2px;          /* 위로 가려진다면 이 값을 5px 등으로 늘려보세요 */
-        
-        /* 폰트 및 스타일 */
-        font-size: $base-font-size;
-        color: $header-fg;  /* 글자색이 안 보인다면 테마 색상으로 지정 */
+		display: none;
+		top: 20px;
 	}
 
 	.site-title {
