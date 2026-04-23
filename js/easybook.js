@@ -1,6 +1,6 @@
 function TOCize(toc, content, matchHeightTo) {
 
-    console.log("001");
+    console.log("002");
     
     if (!(toc && content && matchHeightTo)) return false
     
@@ -60,9 +60,9 @@ function TOCize(toc, content, matchHeightTo) {
     function scrollToHeader(header, hash, ev) {
         var isMobile = window.innerWidth <= 768;
         var hpHeight = document.querySelector('.header-placeholder').offsetHeight;
-        // placeholder 아래로 내리기
-        var headerOffset = isMobile ? hpHeight + 50 : hpHeight + 20; 
+        var headerOffset = isMobile ? hpHeight + 10 : hpHeight + 20; 
         var y = header.getBoundingClientRect().top + aniscroll.getTop() - headerOffset;
+        
         if (window.history['pushState']) {
             window.history.pushState({}, header.textContent, "#" + hash);
             aniscroll.to(y);
@@ -170,7 +170,10 @@ function TOCize(toc, content, matchHeightTo) {
         var hp = document.querySelector('.header-placeholder');
         var hpHeight = hp ? hp.offsetHeight : 0;
         var isMobile = window.innerWidth <= 768;
-        var placeholderCorrection = isMobile ? 50 : 0; 
+        
+        // 만약 여전히 TOC가 타이틀바를 가린다면 이 값을 20, 30 늘림
+        var placeholderCorrection = isMobile ? 10 : 0; 
+        
         var dummyClientTop = scrolldummy.getBoundingClientRect().top - hpHeight + placeholderCorrection;
         var margin = 10, c, d;
         var offsetAdjustment = isMobile ? 0 : 50; 
@@ -230,14 +233,12 @@ function PalmSidebar() {
         var isMobile = ww <= 768;
 
         if (isMobile) {
-            // 여전히 내려와 보인다면 (actualHeight - 20)
-            var adjustedHeight = actualHeight - 50; 
-            if (adjustedHeight < 0) adjustedHeight = 0;          
-            header_placeholder.style.height = adjustedHeight + 'px';
+            // [수정] 본문이 잘리므로 여백을 줄이지 말고 실제 헤더 높이를 그대로 사용합니다.
+            header_placeholder.style.height = actualHeight + 'px'; 
         } else {
-            header_placeholder.style.height = (actualHeight) + 'px';
+            header_placeholder.style.height = actualHeight + 'px';
         }
-    } 
+    }
     
     function toggleSidebar(e) {
         if (/expand-sidebar/.test(pcw.className)) {
