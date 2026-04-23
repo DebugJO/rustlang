@@ -1,6 +1,6 @@
 function TOCize(toc, content, matchHeightTo) {
 
-    console.log("33333");
+    console.log("44444");
     
     if (!(toc && content && matchHeightTo)) return false
     
@@ -60,7 +60,7 @@ function TOCize(toc, content, matchHeightTo) {
     function scrollToHeader(header, hash, ev) {
         var isMobile = window.innerWidth <= 768;
         var hpHeight = document.querySelector('.header-placeholder').offsetHeight;
-        var headerOffset = hpHeight + 20; 
+        var headerOffset = isMobile ? hpHeight : hpHeight + 20; 
         
         var y = header.getBoundingClientRect().top + aniscroll.getTop() - headerOffset;
         
@@ -170,16 +170,12 @@ function TOCize(toc, content, matchHeightTo) {
     var s1 = function () {
         var hp = document.querySelector('.header-placeholder');
         var hpHeight = hp ? hp.offsetHeight : 0;
-        
         var dummyClientTop = scrolldummy.getBoundingClientRect().top - hpHeight;
         var margin = 10, c, d;
-
         var isMobile = window.innerWidth <= 768; 
-        // [수정] 모바일에서도 타이틀바에 가려지지 않게 50px 정도 여유를 줌
-        // 데스크탑은 기존 50px 유지, 모바일은 상황에 따라 40~50px 조정
-        var offsetAdjustment = isMobile ? 50 : 50; 
+        var offsetAdjustment = isMobile ? 0 : 50; 
 
-        if ((c = -dummyClientTop + margin + offsetAdjustment) < 0) c = 0; 
+        if ((c = -dummyClientTop + margin + offsetAdjustment) < 0) c = 0;
 
         if (c) {
             var wh = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
@@ -234,11 +230,12 @@ function PalmSidebar() {
         var isMobile = ww <= 768;
 
         if (isMobile) {
-            header_placeholder.style.height = (actualHeight + 10) + 'px'; 
+            // 여전히 내려와 보인다면 (actualHeight - 20)
+            header_placeholder.style.height = actualHeight + 'px'; 
         } else {
             header_placeholder.style.height = actualHeight + 'px';
         }
-    }  
+    } 
     
     function toggleSidebar(e) {
         if (/expand-sidebar/.test(pcw.className)) {
