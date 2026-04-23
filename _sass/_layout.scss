@@ -67,12 +67,27 @@ $col-secnod-width: 350px; /* 300 350 */
 $hide-sidebar-screen-width: 1120px; /* 1120 */
 
 .col-box.post-toc {
-    position: fixed;    /* 화면에 고정 */
-    top: 60px;         /* 헤더 높이(50px) + 여유공간(10px) 만큼 아래로 내림 */
-    right: 20px;       /* 우측 여백 */
-    max-height: calc(100vh - 80px); /* 화면 높이를 벗어나지 않게 조절 */
-    overflow-y: auto;   /* 내용이 길면 사이드바 안에서 스크롤 */
-    z-index: 999;      /* 헤더(1000)보다는 아래, 본문보다는 위 */
+    /* 1. 화면에 고정하여 헤더와 함께 따라오게 함 */
+    position: fixed !important; 
+    
+    /* 2. 헤더 높이(50px) + 여유분(10px) 설정 */
+    top: 60px !important; 
+    
+    /* 3. 헤더(1000)보다 살짝 뒤에, 하지만 본문보다는 위에 */
+    z-index: 999 !important; 
+    
+    /* 4. 데스크탑에서의 기본 위치 (우측) */
+    right: 20px; 
+    width: 250px; /* 테마에 맞는 적절한 너비 */
+    
+    /* 5. 내용이 길어질 경우 대비 */
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    background-color: #fff; /* 배경이 투명하면 본문과 겹치니 확인 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 살짝 그림자를 주면 더 잘 보입니다 */
+}
+.col-box.post-toc.hide {
+    display: none !important;
 }
 
 .header-placeholder { 
@@ -88,9 +103,10 @@ $hide-sidebar-screen-width: 1120px; /* 1120 */
     	padding: 0; /*추가*/
 	}
 	.col-box.post-toc {
-        top: 50px;     /* 모바일 헤더 높이에 맞춤 */
-        right: 0;
-        width: 100%;    /* 모바일에서는 전체 너비로 보일 경우 */
+		top: 50px !important; /* 모바일 헤더 높이에 맞춤 */
+        right: 0 !important;
+        width: 100% !important;
+        border-radius: 0;
     }
     .header { 
         position: fixed; left: 0; top: 0; right: 0; z-index: 20;
