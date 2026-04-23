@@ -32,6 +32,7 @@ function TOCize(toc, content, matchHeightTo) {
         }
     }
 
+    /*
     function scrollToHeader(header, hash, ev) {
         var headerEl = document.querySelector('.header'); // 추가
         var isPalm = headerEl && getComputedStyle(headerEl).position !== 'static'; // 추가
@@ -50,7 +51,30 @@ function TOCize(toc, content, matchHeightTo) {
             }, 0);
         }
     }
+    */
 
+    // 신규 추가
+    function scrollToHeader(header, hash, ev) {
+        var isMobile = window.innerWidth <= 768;
+        // 타이틀바가 고정되어 있으므로 그 높이만큼 빼줘야 글자가 가려지지 않음
+        var hpHeight = document.querySelector('.header-placeholder').offsetHeight;
+        var headerOffset = isMobile ? hpHeight + 10 : hpHeight + 20; 
+        
+        var y = header.getBoundingClientRect().top + aniscroll.getTop() - headerOffset;
+        
+        if (window.history['pushState']) {
+            window.history.pushState({}, header.textContent, "#" + hash);
+            aniscroll.to(y);
+            ev.preventDefault();
+        } else {
+            var y2 = aniscroll.getTop();
+            setTimeout(function () {
+                aniscroll.setTop(y2);
+                aniscroll.to(y);
+            }, 0);
+        }
+    }
+    
     var generateLink = function (h) {
         var q = make('a');
         cnt++;
@@ -104,16 +128,15 @@ function TOCize(toc, content, matchHeightTo) {
     var maxHeightTOC = '';
     var ppc = document.querySelector('.col-main');
     var header_placeholder = document.querySelector('.header-placeholder');
+    /*
     var s1 = function () {
         var scrollTop = aniscroll.getTop(); // 추가
         var hp = document.querySelector('.header-placeholder'); //추가
         var hpHeight = hp ? hp.offsetHeight : 0; // 추가
         var dummyClientTop = scrolldummy.getBoundingClientRect().top - hpHeight;
         var margin = 10, c, d;
-        /*
-        var scrollTop = aniscroll.getTop(), dummyClientTop = scrolldummy.getBoundingClientRect().top - header_placeholder.offsetHeight,
-            margin = 10, c, d; // c = dummyHeight, d = TOC.maxHeight (+'px')
-        */
+        // var scrollTop = aniscroll.getTop(), dummyClientTop = scrolldummy.getBoundingClientRect().top - header_placeholder.offsetHeight,
+        //    margin = 10, c, d; // c = dummyHeight, d = TOC.maxHeight (+'px')
         var headerEl = document.querySelector('.header'); // 추가
         var isPalm = headerEl && getComputedStyle(headerEl).position !== 'static'; // 추가
         var offsetAdjustment = isPalm ? 0 : 50; //추가
@@ -140,6 +163,46 @@ function TOCize(toc, content, matchHeightTo) {
         }
         scrolldummy.style.height = (c + 'px');
     };
+    */
+    // 신규 추가
+    var s1 = function () {
+        var scrollTop = aniscroll.getTop();
+        var hp = document.querySelector('.header-placeholder');
+        var hpHeight = hp ? hp.offsetHeight : 0;
+        
+        // TOC의 상대 위치 계산
+        var dummyClientTop = scrolldummy.getBoundingClientRect().top - hpHeight;
+        var margin = 10, c, d;
+
+        // [중요] 화면 너비로 모바일/데스크탑 구분 (둘 다 Fixed이므로 position으로 구분 불가)
+        var isMobile = window.innerWidth <= 768; 
+        var offsetAdjustment = isMobile ? 0 : 50; 
+
+        // 계산식에 offsetAdjustment를 반드시 포함해야 데스크탑에서 TOC가 고정됨
+        if ((c = -dummyClientTop + margin + offsetAdjustment) < 0) c = 0; 
+
+        if (c) {
+            var wh = window.innerHeight
+                || document.documentElement.clientHeight
+                || document.body.clientHeight,
+                cbox = matchHeightTo.getBoundingClientRect(),
+                vq = cbox.bottom - dummyClientTop - uls[0].offsetHeight;
+            if (c > vq) c = vq;
+            d = (wh - (margin << 1)) + 'px';
+        } else {
+            d = "";
+        }
+
+        if (d != maxHeightTOC) {
+            maxHeightTOC = d;
+            if (d) {
+                uls[0].setAttribute('style', 'max-height:' + d + '; width:' + (toc.offsetWidth - 20) + "px");
+            } else {
+                uls[0].setAttribute("style", "");
+            }
+        }
+        scrolldummy.style.height = (c + 'px');
+    };    
     window.addEventListener('scroll', s1, false);
     window.addEventListener('resize', s1, false);
 }
@@ -155,6 +218,7 @@ function PalmSidebar() {
     // do not support old browsers!
     if (typeof window['getComputedStyle'] !== 'function') return;
 
+    /*
     function s1() {
         ww = window.innerWidth
             || document.documentElement.clientWidth
@@ -167,6 +231,29 @@ function PalmSidebar() {
         header_placeholder.style.height = is_palm_mode ? (actualHeight + 'px') : '0px'; //추가
         //header_placeholder.style.height = is_palm_mode ? (h.bottom - h.top + 'px') : '0px'
     }
+    */
+    // 신규 추가
+    function s1() {
+        ww = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+        
+        var h = header.getBoundingClientRect();
+        var actualHeight = h.height || (h.bottom - h.top);
+        
+        // [중요] 데스크탑/모바일 모두 헤더가 Fixed라면 placeholder는 
+        // 항상 헤더 높이만큼만 가져야 합니다.
+        // 만약 모바일에서만 유독 간격이 벌어진다면 0px로 강제하거나 수치를 줄여야 합니다.
+        
+        var isMobile = ww <= 768;
+        if (isMobile) {
+            // 모바일에서 간격이 벌어진다면 actualHeight 대신 0 또는 더 작은 값을 넣어보세요.
+            header_placeholder.style.height = actualHeight + 'px'; 
+        } else {
+            header_placeholder.style.height = actualHeight + 'px';
+        }
+    }    
+    
     function toggleSidebar(e) {
         if (/expand-sidebar/.test(pcw.className)) {
             pcw.className = pcw.className.replace(/\s*expand-sidebar\s*/, ' ');
