@@ -1,9 +1,10 @@
 function TOCize(toc, content, matchHeightTo) {
-    if (!(toc && content && matchHeightTo)) return false
-
-    var cnt = 0;
 
     console.log("11111");
+    
+    if (!(toc && content && matchHeightTo)) return false
+    
+    var cnt = 0;    
     
     var make = function (tag) {
         return document.createElement(tag)
