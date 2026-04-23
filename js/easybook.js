@@ -3,6 +3,8 @@ function TOCize(toc, content, matchHeightTo) {
 
     var cnt = 0;
 
+    console.log("11111");
+    
     var make = function (tag) {
         return document.createElement(tag)
     }
