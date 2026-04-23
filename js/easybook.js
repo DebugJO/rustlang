@@ -1,6 +1,6 @@
 function TOCize(toc, content, matchHeightTo) {
 
-    console.log("88888");
+    console.log("99999");
     
     if (!(toc && content && matchHeightTo)) return false
     
@@ -170,9 +170,10 @@ function TOCize(toc, content, matchHeightTo) {
     var s1 = function () {
         var hp = document.querySelector('.header-placeholder');
         var hpHeight = hp ? hp.offsetHeight : 0;
-        var dummyClientTop = scrolldummy.getBoundingClientRect().top - hpHeight;
+        var isMobile = window.innerWidth <= 768;
+        var placeholderCorrection = isMobile ? 50 : 0; 
+        var dummyClientTop = scrolldummy.getBoundingClientRect().top - hpHeight + placeholderCorrection;
         var margin = 10, c, d;
-        var isMobile = window.innerWidth <= 768; 
         var offsetAdjustment = isMobile ? 0 : 50; 
 
         if ((c = -dummyClientTop + margin + offsetAdjustment) < 0) c = 0;
