@@ -1,6 +1,6 @@
 function TOCize(toc, content, matchHeightTo) {
 
-    console.log("004");
+    console.log("005");
     
     if (!(toc && content && matchHeightTo)) return false
     
@@ -171,12 +171,10 @@ function TOCize(toc, content, matchHeightTo) {
         var hp = document.querySelector('.header-placeholder');
         var hpHeight = hp ? hp.offsetHeight : 0;
         var isMobile = window.innerWidth <= 768;
-
-        var placeholderCorrection = isMobile ? 130 : 0; 
         
-        var dummyClientTop = scrolldummy.getBoundingClientRect().top - hpHeight + tocDown;
+        var dummyClientTop = scrolldummy.getBoundingClientRect().top - hpHeight;
         var margin = 10, c, d;
-        var offsetAdjustment = isMobile ? 0 : 50;
+        var offsetAdjustment = isMobile ? 0 : 50; 
 
         if ((c = -dummyClientTop + margin + offsetAdjustment) < 0) c = 0;
 
@@ -186,15 +184,26 @@ function TOCize(toc, content, matchHeightTo) {
                 vq = cbox.bottom - dummyClientTop - uls[0].offsetHeight;
             if (c > vq) c = vq;
             d = (wh - (margin << 1)) + 'px';
-        } else { d = ""; }
+            
+            if (isMobile) {
+                uls[0].style.paddingTop = "50px"; 
+            }
+        } else {
+            d = "";
+            if (isMobile) uls[0].style.paddingTop = ""; // 고정 아닐 땐 원래대로
+        }
         
         if (d != maxHeightTOC) {
             maxHeightTOC = d;
-            if (d) { uls[0].setAttribute('style', 'max-height:' + d + '; width:' + (toc.offsetWidth - 20) + "px"); }
-            else { uls[0].setAttribute("style", ""); }
+            if (d) {
+                uls[0].style.maxHeight = d;
+                uls[0].style.width = (toc.offsetWidth - 20) + "px";
+            } else {
+                uls[0].setAttribute("style", "");
+            }
         }
         scrolldummy.style.height = (c + 'px');
-    };  
+    };
     window.addEventListener('scroll', s1, false);
     window.addEventListener('resize', s1, false);
 }
