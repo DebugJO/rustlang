@@ -89,16 +89,14 @@ $hide-sidebar-screen-width: 1120px; /* 1120 */
 	}
 	
 	col-box.post-toc {
-        position: fixed !important; /* 모바일은 화면 기준 고정이 편리함 */
-        top: 50px !important;       /* 모바일 헤더 높이에 딱 붙임 */
+        position: fixed !important;
+        top: 50px !important;
         right: 0 !important;
-        width: 100% !important;     /* 모바일은 보통 전체 너비를 사용 */
-        height: calc(100vh - 50px) !important; /* 헤더 제외 남은 화면 꽉 채우기 */
-        z-index: 1001;              /* 헤더보다 위에 있거나 바로 아래 있게 */
-        
-        /* 모바일에서 TOC 글자가 많을 수 있으니 스크롤 필수 */
+        width: 100% !important; 
+        height: calc(100vh - 50px) !important;
+        z-index: 1001; 
         overflow-y: auto !important; 
-        background-color: $header-bg; /* 배경색이 투명하면 뒤의 본문과 겹쳐서 안 보임 */
+        background-color: $header-bg; 
     }
 	
     .header { 
