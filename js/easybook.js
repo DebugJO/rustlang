@@ -1,6 +1,6 @@
 function TOCize(toc, content, matchHeightTo) {
 
-    console.log("77777");
+    console.log("88888");
     
     if (!(toc && content && matchHeightTo)) return false
     
@@ -231,7 +231,7 @@ function PalmSidebar() {
 
         if (isMobile) {
             // 여전히 내려와 보인다면 (actualHeight - 20)
-            var adjustedHeight = actualHeight - 30; 
+            var adjustedHeight = actualHeight - 50; 
             if (adjustedHeight < 0) adjustedHeight = 0;          
             header_placeholder.style.height = adjustedHeight + 'px';
         } else {
