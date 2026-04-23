@@ -1,6 +1,6 @@
 function TOCize(toc, content, matchHeightTo) {
 
-    console.log("99999");
+    console.log("001");
     
     if (!(toc && content && matchHeightTo)) return false
     
@@ -60,10 +60,9 @@ function TOCize(toc, content, matchHeightTo) {
     function scrollToHeader(header, hash, ev) {
         var isMobile = window.innerWidth <= 768;
         var hpHeight = document.querySelector('.header-placeholder').offsetHeight;
-        var headerOffset = isMobile ? hpHeight : hpHeight + 20; 
-        
+        // placeholder 아래로 내리기
+        var headerOffset = isMobile ? hpHeight + 50 : hpHeight + 20; 
         var y = header.getBoundingClientRect().top + aniscroll.getTop() - headerOffset;
-        
         if (window.history['pushState']) {
             window.history.pushState({}, header.textContent, "#" + hash);
             aniscroll.to(y);
