@@ -67,24 +67,12 @@ $col-secnod-width: 350px; /* 300 350 */
 $hide-sidebar-screen-width: 1120px; /* 1120 */
 
 .col-box.post-toc {
-    /* 1. 화면에 고정하여 헤더와 함께 따라오게 함 */
-    position: fixed !important; 
-    
-    /* 2. 헤더 높이(50px) + 여유분(10px) 설정 */
+    position: -webkit-sticky;
+    position: sticky !important; 
     top: 60px !important; 
-    
-    /* 3. 헤더(1000)보다 살짝 뒤에, 하지만 본문보다는 위에 */
-    z-index: 999 !important; 
-    
-    /* 4. 데스크탑에서의 기본 위치 (우측) */
-    right: 20px; 
-    width: 250px; /* 테마에 맞는 적절한 너비 */
-    
-    /* 5. 내용이 길어질 경우 대비 */
-    max-height: calc(100vh - 80px);
-    overflow-y: auto;
-    background-color: #fff; /* 배경이 투명하면 본문과 겹치니 확인 */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 살짝 그림자를 주면 더 잘 보입니다 */
+    z-index: 999;
+    max-height: calc(100vh - 80px) !important;
+    overflow-y: auto; 
 }
 
 .header-placeholder { 
@@ -99,12 +87,20 @@ $hide-sidebar-screen-width: 1120px; /* 1120 */
     	margin: 0; /*추가*/
     	padding: 0; /*추가*/
 	}
-	.col-box.post-toc {
-		top: 50px !important; /* 모바일 헤더 높이에 맞춤 */
+	
+	col-box.post-toc {
+        position: fixed !important; /* 모바일은 화면 기준 고정이 편리함 */
+        top: 50px !important;       /* 모바일 헤더 높이에 딱 붙임 */
         right: 0 !important;
-        width: 100% !important;
-        border-radius: 0;
+        width: 100% !important;     /* 모바일은 보통 전체 너비를 사용 */
+        height: calc(100vh - 50px) !important; /* 헤더 제외 남은 화면 꽉 채우기 */
+        z-index: 1001;              /* 헤더보다 위에 있거나 바로 아래 있게 */
+        
+        /* 모바일에서 TOC 글자가 많을 수 있으니 스크롤 필수 */
+        overflow-y: auto !important; 
+        background-color: $header-bg; /* 배경색이 투명하면 뒤의 본문과 겹쳐서 안 보임 */
     }
+	
     .header { 
         position: fixed; left: 0; top: 0; right: 0; z-index: 20;
         #sidebar-toggle {
