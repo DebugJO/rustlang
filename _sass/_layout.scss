@@ -1,5 +1,6 @@
 body {
 	background-color: #e0e0e3;
+	padding-top: 50px; /* 추가 */
 }
 
 .wrapper {
@@ -17,6 +18,14 @@ body {
 	background-color: $header-bg;
 	padding: 10px;
 	margin: 0;
+
+	/* 추가부분 : start */
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+	/* 추가부분 : end */
 	
 	&:after {
 		clear: both;
