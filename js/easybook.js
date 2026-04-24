@@ -1,6 +1,6 @@
 function TOCize(toc, content, matchHeightTo) {
 
-    console.log("005");
+    // console.log("005");
     
     if (!(toc && content && matchHeightTo)) return false
     
