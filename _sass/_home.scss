@@ -14,7 +14,8 @@
     margin-top: 0px;
 	
     @include media-query($on-palm) {
-		margin: 10px;
+		/* margin: 10px; */
+		margin-left: 8px !important;
 		font-size: 30px;
     }
 }
