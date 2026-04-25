@@ -8,7 +8,7 @@ permalink: /category/
 <div class="home" data-nosnippet>
   <h1 class="page-heading" style="font-size:24px; margin-bottom:0px; padding-bottom: 20px; padding-top: 20px; margin-left: 10px;">Category</h1>
 
-  <ul class="post-list" style="padding: 0px 40px 20px 40px; padding-left: 30px;">
+  <ul class="post-list" style="padding: 0px 40px 20px 40px; padding-left: 20px;">
 
 {% capture categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign category = categories | split:',' | sort %}
