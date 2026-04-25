@@ -24,6 +24,7 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 
 <hr style="border: 0; height: 1px; background: #eee; margin-bottom: 12px;">
 
+<!--
 <center>
 <img src="https://raw.githubusercontent.com/DebugJO/rustlang/refs/heads/main/image/CS.png" width="40" height="40">&nbsp;&nbsp;
 <img src="https://raw.githubusercontent.com/DebugJO/rustlang/refs/heads/main/image/Rust.png" width="40" height="40">&nbsp;&nbsp;
@@ -31,6 +32,7 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 <img src="https://raw.githubusercontent.com/DebugJO/rustlang/refs/heads/main/image/CPP.png" width="40" height="40">&nbsp;&nbsp;
 <img src="https://raw.githubusercontent.com/DebugJO/rustlang/refs/heads/main/image/Go.png" width="40" height="40">
 </center>
+-->
 
 ###### 참고문헌 작성법
 
