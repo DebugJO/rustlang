@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rustlang.kr/sitemap.xml
+Sitemap: https://devsight.kr/sitemap.xml
