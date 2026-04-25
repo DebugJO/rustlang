@@ -20,7 +20,7 @@ Thank you for visiting our website. Please do not hesitate to contact me with an
 * **Desktop**  : Avalonia, WPF, Qt, Electrobun, Blazor
 
 ###### Devsight, Search Posts
-* 사이트 내 키워드 검색 : <a href="https://devsight.kr/search/" style="text-decoration: none; padding-left: 8px; padding-right: 8px; padding-bottom: 4px; padding-top: 2px; border-radius: 4px; color: #FFF; background-color: #607D8B;">Search Posts</a>
+* 사이트 내 키워드 검색 : <a href="https://devsight.kr/search/" style="text-decoration: none; padding-left: 8px; padding-right: 8px; padding-bottom: 4px; padding-top: 2px; border-radius: 4px; color: #FFF; background-color: #607D8B; font-size: 13px;">Search Posts</a>
 
 <hr style="border: 0; height: 1px; background: #eee; margin-bottom: 12px;">
 
