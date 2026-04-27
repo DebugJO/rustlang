@@ -2,9 +2,9 @@
 [https://devsight.kr](https://devsight.kr/)
 
 ### Software Engineer / Developer
-Language : C#, Rust, Zig, C++, Go
-Database : Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
-Desktop : Avalonia, WPF, Qt, Electrobun, Blazor
+* Language : C#, Rust, Zig, C++, Go
+* Database : Oracle, SQL Server, MariaDB, PostgreSQL, Firebird
+* Desktop : Avalonia, WPF, Qt, Electrobun, Blazor
 
 ### how to post
 
