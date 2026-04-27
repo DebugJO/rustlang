@@ -65,9 +65,9 @@ title:  "C#에서 AOT로 NLog사용하기"
 categories: [C#ㆍ.NET Programming]
 mermaid: true
 ---
+```
 
-
-\`\`\`mermaid
+```mermaid
 graph LR
 A["Cpp, Rust, Zig"] --> B["AOT(C#)"]
 B --> C["Manged(C#)"]
