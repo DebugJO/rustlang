@@ -73,7 +73,6 @@ graph LR
 A["Cpp, Rust, Zig"] --> B["AOT(C#)"]
 B --> C["Manged(C#)"]
 ```
-```
 
 
 ```
