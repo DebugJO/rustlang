@@ -67,12 +67,13 @@ mermaid: true
 ---
 ```
 
-```md
-```mermaid
+<pre><code>
+  ```mermaid
 graph LR
 A["Cpp, Rust, Zig"] --> B["AOT(C#)"]
 B --> C["Manged(C#)"]
 ```
+</code></pre>
 
 
 ```
