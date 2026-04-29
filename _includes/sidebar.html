@@ -1,4 +1,4 @@
-<aside data-nosnippet>
+<script>console.log("77777")</script>
 <div class="col-box col-box-author" style="padding-bottom:12px !important;">
   <a href="/about/"><img class="avatar" src="{{ site.avatar }}" alt="{{ site.author }}"></a>
   <!-- <div class="col-box-title name">{{ site.author }}</div> -->
@@ -31,8 +31,7 @@
   </p>
 </div>
 
-<!-- googleoff: index -->
-<div class="col-box" data-nosnippet>
+<div class="col-box">
   <!-- <div class="col-box-title">Newest Posts <a class="rss-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed</a></div> -->
   <div class="col-box-title">Newest Posts <a class="rss-link" href="/gsearch/">&nbsp;&nbsp;Search&nbsp;&nbsp;</span></a></div>  
   <ul class="post-list">
@@ -42,7 +41,7 @@
   </ul>
 </div>
 
-<div class="col-box" data-nosnippet>
+<div class="col-box">
   <!-- <div class="col-box-title">Category <span style="color:lightsteelblue;">({{ site.posts | size }})</span> <a class="rss-link" style="color: #AAA; border: 1px solid #CCC; padding: 1px 4px;" href="https://rustlang.kr/feed.xml">RSS Feed</a></div> --> 
   <div class="col-box-title">Category <span style="color:lightsteelblue;">({{ site.posts | size }})</span> <a class="rss-link" href="/feed.xml">RSS Feed</a></div>  
   <ul class="post-list">
@@ -51,7 +50,6 @@
     {% endfor %}
   </ul>
 </div>
-<!-- googleon: index -->
 
 {% if page.layout == "post" %}
 <div class="col-box post-toc hide">
@@ -59,11 +57,10 @@
 </div>
 {% endif %}
 
-<div class="col-box" style="padding-top:8px;" data-nosnippet>
+<div class="col-box" style="padding-top:8px;">
 <center>
   <span style="font-size:12px;color:#6a6a6a;">Ⓒ2018</span>&nbsp;<span style="font-size:12px;color:#6a6a6a;"><a href="#"><b>DevSight.kr</b></a></span>&nbsp;&nbsp;
   <!-- <a style="font-size:12px;color:#6a6a6a;" href="https://devsight.kr/about/">Contact: <b>msjo@devsight.kr</b></a>&nbsp;&nbsp; -->
   <a style="font-size:12px;color:#6a6a6a;" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">ⒸBY-NC-ND</a>
 </center>
 </div>  
-</aside>  
