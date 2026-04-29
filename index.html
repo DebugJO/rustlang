@@ -4,14 +4,14 @@ layout: default
 
 <div class="home">
   <!-- <a class="rss-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed</a> -->
-  <div data-nosnippet>
+  <!-- <div data-nosnippet> -->
     <h1 class="page-heading">
       <a href="{{ site.baseurl }}" alt="Home" style="text-decoration: none;">
         <span style="color:#607D8B;">Ξ</span><span style="color:#607D8B;">Dev</span><span style="color:#555;">sight</span>
       </a>
       <span style="font-size:14px;font-weight: normal;">&nbsp;&nbsp;&nbsp;&nbsp;C# ∙ Rust ∙ Zig ∙ C++ ∙ Go</span>
     </h1>
-  </div>
+  <!-- </div> -->
   
   <ul class="post-list">
     {% for post in paginator.posts %}
@@ -37,7 +37,7 @@ layout: default
   </ul>
   
   <!-- Pagination links -->
-<div class="pagination" data-nosnippet> 
+<div class="pagination"> 
   <a href="{{ '/' | relative_url }}" style="text-decoration: none; font-weight: normal;">HOME</a>
 
   &nbsp;&nbsp;&nbsp;&nbsp;
