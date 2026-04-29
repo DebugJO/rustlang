@@ -1,14 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /private/
-
-User-agent: Yeti
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Daumoa
-Allow: /
 
 Sitemap: https://devsight.kr/sitemap.xml
