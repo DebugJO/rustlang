@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<script>console.log("33333")</script>
 <div class="post">
 
   <header class="post-header">
@@ -15,9 +16,7 @@ layout: default
   
   {% include comment.html %}
 
-<!-- 구분선 -->
-<!-- googleoff: index -->  
-<div data-nosnippet>  
+<!-- 구분선 --> 
   <hr style="border: 0; border-top: 1px solid #ccc; margin: 30px 0;">
   <div class="pagination" style="display: flex; justify-content: center; align-items: center; padding: 0 40px;">  
     {% assign first_post = site.posts.first %}
@@ -53,6 +52,4 @@ layout: default
       {% endif %}
     </div>
   </div>
-</div>
-<!-- googleon: index -->  
 </div>
