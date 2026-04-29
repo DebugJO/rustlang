@@ -79,38 +79,9 @@ B --> C["Manged(C#)"]
 ```
 </code></pre>
 
-```
-User-agent: Amazonbot
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-User-agent: Bytespider
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: CloudflareBrowserRenderingCrawler
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: GPTBot
-Disallow: /
-
-User-agent: meta-externalagent
-Disallow: /
-
-User-agent: *
-Allow: /
-
-Sitemap: https://devsight.kr/sitemap.xml
-```
+Rorychhattish
 
 ![My Skills](https://skillicons.dev/icons?i=cs,rust,zig,cpp,clion,dotnet,dart,go,postgres,qt)
+
+![C3](https://c3-lang.org/logo.svg)
+
