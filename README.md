@@ -87,3 +87,7 @@ B --> C["Manged(C#)"]
     <img src="https://c3-lang.org/logo.svg" alt="C3">
 </div>
 
+<div style="display: flex; justify-content: flex-end;">
+ <img src="https://c3-lang.org/logo.svg" alt="C3">
+</div>
+
