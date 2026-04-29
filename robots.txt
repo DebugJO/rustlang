@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
+Disallow: /private/
+
+# 네이버
+User-agent: Yeti
+Allow: /
+
+# 구글
+User-agent: Googlebot
+Allow: /
+
+# 다음(카카오)
+User-agent: Daumoa
+Allow: /
 
 Sitemap: https://devsight.kr/sitemap.xml
