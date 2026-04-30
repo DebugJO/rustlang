@@ -20,11 +20,11 @@
 
     {% include footer.html %}
 
-    <!--
+   {% comment %}
     {% if page.mermaid %}
     {% include mermaid.html %}
     {% endif %}
-    -->
+   {% endcomment %}
     
     {% if page.mermaid or layout.common_mermaid or content contains 'mermaid' %}
       {% include mermaid.html %}
