@@ -15,6 +15,7 @@
   #js-category-list li a
   {
     color: #333 !important;
+    text-decoration: none !important;
   }
   
   #js-category-list li a:hover
@@ -26,17 +27,17 @@
   #js-category-list li span
   {
  	font-size:13px !important;
+    color: #888;
   }    
 </style>
 
-<div class="custom-category-box">
-    <ul id="js-category-list">
+<div class="custom-category-box" style="margin:0;padding:0;">
+    <ul id="js-category-list" style="margin:0; padding:0;border-top: 1px dotted #ddd;">
+        <li>불러오는 중...</li>
     </ul>
 </div>
 
 <script>
-    const categoryTarget = "C#ㆍ.NETㆍAvalonia"; 
-
     fetch('/rss')
         .then(response => response.text())
         .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
@@ -44,11 +45,22 @@
             const items = data.querySelectorAll("item");
             let html = '';
             let count = 0;
+            const maxCount = 20;
 
-            items.forEach(item => {
-                const category = item.querySelector("category") ? item.querySelector("category").textContent : '';
+            for (let i = 0; i < items.length; i++) {
+                if (count >= maxCount) break;
+
+                const item = items[i];
                 const title = item.querySelector("title").textContent;
                 const link = item.querySelector("link").textContent;
+                
+                const cleanLink = link.split('?')[0];
+                const isNumericPost = /\/\d+$/.test(cleanLink);
+
+                if (!isNumericPost) {
+                    continue;
+                }
+
                 const rawDate = item.querySelector("pubDate") ? item.querySelector("pubDate").textContent : '';
                 let printDate = '';
                 
@@ -61,15 +73,13 @@
                     printDate = `${year}.${month}.${day}`;
                 }
 
-                if (category === categoryTarget) {
-                    html += `
-                        <li>
-                            <a href="${link}">${title}</a>
-                            <span class="date">${printDate}</span>
-                        </li>`;
-                    count++;
-                }
-            });
+                html += `
+                    <li>
+                        <a href="${link}">${title}</a>
+                        <span class="date">${printDate}</span>
+                    </li>`;
+                count++;
+            }
 
             if (html) {
                 document.getElementById('js-category-list').innerHTML = html;
