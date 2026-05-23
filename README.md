@@ -81,4 +81,4 @@ B --> C["Manged(C#)"]
 
 ![My Skills](https://skillicons.dev/icons?i=cs,rust,zig,cpp,clion,dotnet,dart,go,postgres,qt)
 
-![C3](https://c3-lang.org/logo.svg)
+![C3](https://c3-lang.org/assets/logo.svg)
